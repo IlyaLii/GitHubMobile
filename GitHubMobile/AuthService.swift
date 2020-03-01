@@ -10,11 +10,36 @@ import Foundation
 
 class AuthService {
     
+    private var login: String
+    private var password: String
     
+    init(login: String, password: String) {
+        self.login = login
+        self.password = password
+    }
     
-    
-    static func login(login: String, password: String) {
-        //let session = URLSession.shared
+    func userInfo(completionHandler: @escaping(Result<User, Error>) -> Void) {
+        let stringData = "\(login):\(password)"
+        guard let loginData = stringData.data(using: .utf8)?.base64EncodedString() else { return }
         
+        guard let url = URL(string: "https://api.github.com/user") else { return }
+        var request = URLRequest(url: url)
+        request.setValue("Basic \(loginData)", forHTTPHeaderField: "Authorization")
+        
+        let session = URLSession.shared
+        session.dataTask(with: request) { (data, _, error) in
+            guard let data = data else {
+                completionHandler(.failure(error!))
+                return
+            }
+            
+            do {
+                let user = try JSONDecoder().decode(User.self, from: data)
+                completionHandler(.success(user))
+            } catch let error {
+                completionHandler(.failure(error))
+            }
+        }.resume()
     }
 }
+

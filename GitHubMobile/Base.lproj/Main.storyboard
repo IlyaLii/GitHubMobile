@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jYo-WS-NKp">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jYo-WS-NKp">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,22 +16,23 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="example@github.com" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XA1-V2-X7e">
-                                <rect key="frame" x="60" y="290" width="294" height="34"/>
+                                <rect key="frame" x="60" y="340" width="294" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="••••••••••" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="W2F-MV-5Ys">
-                                <rect key="frame" x="60" y="344" width="294" height="34"/>
+                                <rect key="frame" x="60" y="394" width="294" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v5M-mh-g54">
-                                <rect key="frame" x="157" y="428" width="100" height="34"/>
+                                <rect key="frame" x="157" y="478" width="100" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="9N9-9J-KWW"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="IED-do-xTo"/>
                                 </constraints>
-                                <state key="normal" title="Login">
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <state key="normal" title="Enter">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -39,12 +40,12 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.5" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="v5M-mh-g54" firstAttribute="centerX" secondItem="Ozn-ex-xdm" secondAttribute="centerX" id="7G3-SV-l6u"/>
                             <constraint firstItem="XA1-V2-X7e" firstAttribute="leading" secondItem="Ozn-ex-xdm" secondAttribute="leading" constant="60" id="OEd-aG-BuG"/>
                             <constraint firstItem="W2F-MV-5Ys" firstAttribute="leading" secondItem="Ozn-ex-xdm" secondAttribute="leading" constant="60" id="QTE-ZA-eoM"/>
-                            <constraint firstItem="XA1-V2-X7e" firstAttribute="top" secondItem="Ozn-ex-xdm" secondAttribute="top" constant="150" id="Sy4-iA-6E4"/>
+                            <constraint firstItem="XA1-V2-X7e" firstAttribute="top" secondItem="Ozn-ex-xdm" secondAttribute="top" constant="200" id="Sy4-iA-6E4"/>
                             <constraint firstItem="v5M-mh-g54" firstAttribute="top" secondItem="W2F-MV-5Ys" secondAttribute="bottom" constant="50" id="dEw-cg-tLD"/>
                             <constraint firstItem="W2F-MV-5Ys" firstAttribute="top" secondItem="XA1-V2-X7e" secondAttribute="bottom" constant="20" id="nHS-Ys-mM3"/>
                             <constraint firstItem="Ozn-ex-xdm" firstAttribute="trailing" secondItem="XA1-V2-X7e" secondAttribute="trailing" constant="60" id="oJz-fq-Nfz"/>
@@ -86,7 +87,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="QLK-m3-pgv">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.94235444069999996" green="0.8408266902" blue="0.72356563809999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="largeTitleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <offsetWrapper key="textShadowOffset" horizontal="0.0" vertical="0.0"/>
