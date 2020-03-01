@@ -18,28 +18,36 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setupUI()
     }
-    
     
     private func setupUI() {
         loginButton.layer.cornerRadius = 10
         loginButton.layer.borderColor = UIColor.lightGray.cgColor
         loginButton.layer.borderWidth = 2
+        navigationController?.navigationBar.prefersLargeTitles = true
     }
-    
-    
     
     @IBAction func loginTapped(_ sender: UIButton) {
         if emailTF.text == "" || passwordTF.text == "" { return }
         authService = AuthService(login: emailTF.text!, password: passwordTF.text!)
+        userInfo()
+    }
+    
+    func userInfo() {
         authService.userInfo { (result) in
             switch result {
-            case .success(let user): print(user)
+            case .success(let user):
+                self.authService.setProfile()
+                DispatchQueue.main.async {
+                    let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainVC") as! MainViewController
+                    self.navigationController?.pushViewController(vc, animated: true)
+                    self.passwordTF.text = ""
+                    self.emailTF.text = ""
+                }
             case .failure(let error):
                 DispatchQueue.main.async {
-                    self.showAlert(error: error.localizedDescription)
+                    self.showAlert(error: error.rawValue)
                 }
             }
         }

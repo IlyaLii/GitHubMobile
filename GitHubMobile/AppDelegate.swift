@@ -18,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let appearance = UINavigationBarAppearance()
             appearance.backgroundColor = .lightGray
             appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
+            appearance.titleTextAttributes = [.foregroundColor: UIColor.white]
             UINavigationBar.appearance().standardAppearance = appearance
             UINavigationBar.appearance().scrollEdgeAppearance = appearance
         }
