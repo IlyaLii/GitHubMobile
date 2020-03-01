@@ -17,6 +17,7 @@
 		D86516C9240A860900C7C77C /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86516C8240A860900C7C77C /* AuthService.swift */; };
 		D8CC931B240BB47600BBEE5C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CC931A240BB47600BBEE5C /* User.swift */; };
 		D8CC931D240BBC5300BBEE5C /* AuthError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CC931C240BBC5300BBEE5C /* AuthError.swift */; };
+		D8CC931F240BE32500BBEE5C /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CC931E240BE32500BBEE5C /* ProfileCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		D86516C8240A860900C7C77C /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		D8CC931A240BB47600BBEE5C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D8CC931C240BBC5300BBEE5C /* AuthError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthError.swift; sourceTree = "<group>"; };
+		D8CC931E240BE32500BBEE5C /* ProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				D86516C8240A860900C7C77C /* AuthService.swift */,
 				D8CC931A240BB47600BBEE5C /* User.swift */,
 				D81EC109240A68E700F87E0C /* MainViewController.swift */,
+				D8CC931E240BE32500BBEE5C /* ProfileCell.swift */,
 				D81EC0FE240A688300F87E0C /* Assets.xcassets */,
 				D81EC100240A688300F87E0C /* LaunchScreen.storyboard */,
 				D81EC103240A688300F87E0C /* Info.plist */,
@@ -155,6 +158,7 @@
 				D8CC931B240BB47600BBEE5C /* User.swift in Sources */,
 				D86516C9240A860900C7C77C /* AuthService.swift in Sources */,
 				D81EC0F6240A688100F87E0C /* AppDelegate.swift in Sources */,
+				D8CC931F240BE32500BBEE5C /* ProfileCell.swift in Sources */,
 				D81EC0F8240A688100F87E0C /* SceneDelegate.swift in Sources */,
 				D8CC931D240BBC5300BBEE5C /* AuthError.swift in Sources */,
 			);
