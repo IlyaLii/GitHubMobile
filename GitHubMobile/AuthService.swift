@@ -26,7 +26,7 @@ class AuthService {
         guard let loginData = AuthService.getProfile() else { return }
         self.loginData = loginData
     }
-    
+
     func userInfo(completionHandler: @escaping(Result<User, AuthError>) -> Void) {
         
         guard let url = URL(string: "https://api.github.com/user") else { return }
@@ -44,6 +44,7 @@ class AuthService {
                 let user = try JSONDecoder().decode(User.self, from: data)
                 completionHandler(.success(user))
             } catch {
+                print(error)
                 completionHandler(.failure(.wrongData))
             }
         }.resume()
