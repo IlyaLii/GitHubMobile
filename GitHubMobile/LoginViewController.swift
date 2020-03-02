@@ -18,6 +18,8 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let tap = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard(sender:)))
+        view.addGestureRecognizer(tap)
         setupUI()
     }
     
@@ -28,21 +30,25 @@ class LoginViewController: UIViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
     }
     
+    @objc func hideKeyboard(sender: UITapGestureRecognizer) {
+           self.view.endEditing(true)
+       }
+    
     @IBAction func loginTapped(_ sender: UIButton) {
         if emailTF.text == "" || passwordTF.text == "" { return }
         authService = AuthService(login: emailTF.text!, password: passwordTF.text!)
         userInfo()
     }
     
-    func userInfo() {
+    private func userInfo() {
         authService.userInfo { (result) in
             switch result {
             case .success(let user):
                 self.authService.setProfile()
                 DispatchQueue.main.async {
                     let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainVC") as! MainViewController
-                    vc.userInfo = user
                     self.navigationController?.pushViewController(vc, animated: true)
+                    vc.userInfo = user
                     self.passwordTF.text = ""
                     self.emailTF.text = ""
                 }
@@ -54,7 +60,7 @@ class LoginViewController: UIViewController {
         }
     }
     
-    func showAlert(error: String) {
+    private func showAlert(error: String) {
         let alert = UIAlertController(title: "Error", message: error, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
         present(alert, animated: true, completion: nil)

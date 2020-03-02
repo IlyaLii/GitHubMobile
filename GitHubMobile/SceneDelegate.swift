@@ -15,6 +15,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         
+        if #available(iOS 13, *) {
+            window?.overrideUserInterfaceStyle = .light
+        }
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window?.windowScene = windowScene
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -27,6 +30,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             let navigationVC = UINavigationController(rootViewController: vc)
             window?.rootViewController = navigationVC
         }
+        
         
         
         window?.makeKeyAndVisible()

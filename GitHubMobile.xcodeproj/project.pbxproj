@@ -18,6 +18,7 @@
 		D8CC931B240BB47600BBEE5C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CC931A240BB47600BBEE5C /* User.swift */; };
 		D8CC931D240BBC5300BBEE5C /* AuthError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CC931C240BBC5300BBEE5C /* AuthError.swift */; };
 		D8CC931F240BE32500BBEE5C /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CC931E240BE32500BBEE5C /* ProfileCell.swift */; };
+		D8CC9323240C527700BBEE5C /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CC9322240C527700BBEE5C /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		D8CC931A240BB47600BBEE5C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D8CC931C240BBC5300BBEE5C /* AuthError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthError.swift; sourceTree = "<group>"; };
 		D8CC931E240BE32500BBEE5C /* ProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
+		D8CC9322240C527700BBEE5C /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				D81EC0F5240A688100F87E0C /* AppDelegate.swift */,
 				D81EC0F7240A688100F87E0C /* SceneDelegate.swift */,
 				D81EC0FB240A688100F87E0C /* Main.storyboard */,
+				D8CC9322240C527700BBEE5C /* NetworkManager.swift */,
 				D81EC10B240A691700F87E0C /* LoginViewController.swift */,
 				D8CC931C240BBC5300BBEE5C /* AuthError.swift */,
 				D86516C8240A860900C7C77C /* AuthService.swift */,
@@ -153,6 +156,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8CC9323240C527700BBEE5C /* NetworkManager.swift in Sources */,
 				D81EC10C240A691700F87E0C /* LoginViewController.swift in Sources */,
 				D81EC10A240A68E700F87E0C /* MainViewController.swift in Sources */,
 				D8CC931B240BB47600BBEE5C /* User.swift in Sources */,

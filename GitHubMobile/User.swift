@@ -12,7 +12,6 @@ struct User: Decodable {
     var avatar_url: String
     var name: String
     var company: String?
-    var blog: String?
     var email: String?
     var bio: String?
 }

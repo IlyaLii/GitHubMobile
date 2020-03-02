@@ -8,7 +8,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "C32B7A5E-9F80-461D-B55A-AD0107B0EDA8"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GitHubMobile/AuthService.swift"
@@ -40,61 +40,284 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "D6E9A409-7B2A-4916-A3C4-7A46416668EC"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GitHubMobile/MainViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "D6E9A409-7B2A-4916-A3C4-7A46416668EC - 56d8e35095f0b7de"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;GitHubMobile.User, GitHubMobile.AuthError&gt;) -&gt; () in GitHubMobile.MainViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "GitHubMobile"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/chiki-briki/Documents/GitHubMobile/GitHubMobile/MainViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "254">
+               </Location>
+               <Location
+                  uuid = "D6E9A409-7B2A-4916-A3C4-7A46416668EC - 56d8e35095f0b7de"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;GitHubMobile.User, GitHubMobile.AuthError&gt;) -&gt; () in GitHubMobile.MainViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "GitHubMobile"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/chiki-briki/Documents/GitHubMobile/GitHubMobile/MainViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "310">
+               </Location>
+               <Location
+                  uuid = "D6E9A409-7B2A-4916-A3C4-7A46416668EC - 56d8e35095f0b7de"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;GitHubMobile.User, GitHubMobile.AuthError&gt;) -&gt; () in GitHubMobile.MainViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "GitHubMobile"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/chiki-briki/Documents/GitHubMobile/GitHubMobile/MainViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "1140">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "29FFEC82-98AA-46BF-82EA-6A4032AD8A90"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GitHubMobile/LoginViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "userInfo()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "29FFEC82-98AA-46BF-82EA-6A4032AD8A90 - ca15eab5ad3fbbb1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;GitHubMobile.User, GitHubMobile.AuthError&gt;) -&gt; () in GitHubMobile.LoginViewController.(userInfo in _6B1780BBEA58D4B41C402D5133102B02)() -&gt; ()"
+                  moduleName = "GitHubMobile"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/chiki-briki/Documents/GitHubMobile/GitHubMobile/LoginViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "46"
+                  endingLineNumber = "46"
+                  offsetFromSymbolStart = "172">
+               </Location>
+               <Location
+                  uuid = "29FFEC82-98AA-46BF-82EA-6A4032AD8A90 - ca15eab5ad3fbbb1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;GitHubMobile.User, GitHubMobile.AuthError&gt;) -&gt; () in GitHubMobile.LoginViewController.(userInfo in _6B1780BBEA58D4B41C402D5133102B02)() -&gt; ()"
+                  moduleName = "GitHubMobile"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/chiki-briki/Documents/GitHubMobile/GitHubMobile/LoginViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "46"
+                  endingLineNumber = "46"
+                  offsetFromSymbolStart = "216">
+               </Location>
+               <Location
+                  uuid = "29FFEC82-98AA-46BF-82EA-6A4032AD8A90 - ca15eab5ad3fbbb1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;GitHubMobile.User, GitHubMobile.AuthError&gt;) -&gt; () in GitHubMobile.LoginViewController.(userInfo in _6B1780BBEA58D4B41C402D5133102B02)() -&gt; ()"
+                  moduleName = "GitHubMobile"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/chiki-briki/Documents/GitHubMobile/GitHubMobile/LoginViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "46"
+                  endingLineNumber = "46"
+                  offsetFromSymbolStart = "832">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "665633DB-5CC8-45DD-89CE-BC434D663B0E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GitHubMobile/NetworkManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "downloadImage(url:completionHandler:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "665633DB-5CC8-45DD-89CE-BC434D663B0E - 7c9d41e1d691102f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static GitHubMobile.NetworkManager.downloadImage(url: Swift.String, completionHandler: (__C.UIImage) -&gt; ()) -&gt; ()"
+                  moduleName = "GitHubMobile"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/chiki-briki/Documents/GitHubMobile/GitHubMobile/NetworkManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "392">
+               </Location>
+               <Location
+                  uuid = "665633DB-5CC8-45DD-89CE-BC434D663B0E - 9830d97352bba14e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in static GitHubMobile.NetworkManager.downloadImage(url: Swift.String, completionHandler: (__C.UIImage) -&gt; ()) -&gt; ()"
+                  moduleName = "GitHubMobile"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/chiki-briki/Documents/GitHubMobile/GitHubMobile/NetworkManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "232">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8C5B9B01-A9EF-4E8F-A405-476BC03B93DC"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GitHubMobile/NetworkManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "downloadImage(url:completionHandler:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9851A7EE-8704-4351-B792-F36AF6E0F76D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GitHubMobile/NetworkManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "14"
+            endingLineNumber = "14"
+            landmarkName = "downloadImage(url:completionHandler:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D7D84A97-AD12-4F90-98CE-0038060EA439"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GitHubMobile/MainViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
-            landmarkName = "viewDidLoad()"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
+            landmarkName = "getImage()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "603D3A2D-9A9B-4ADA-8C1F-7319E967BE0B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GitHubMobile/MainViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "103"
+            endingLineNumber = "103"
+            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "66180E52-38CD-4539-8158-083D3723432A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GitHubMobile/MainViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
+            landmarkName = "getImage()"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "D6E9A409-7B2A-4916-A3C4-7A46416668EC - 56d8e35095f0b7de"
+                  uuid = "66180E52-38CD-4539-8158-083D3723432A - 6900cd980312e274"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Result&lt;GitHubMobile.User, GitHubMobile.AuthError&gt;) -&gt; () in GitHubMobile.MainViewController.viewDidLoad() -&gt; ()"
+                  symbolName = "GitHubMobile.MainViewController.(getImage in _F52285BFBC6739338AD6FEA4AFDDFD07)() -&gt; ()"
                   moduleName = "GitHubMobile"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/chiki-briki/Documents/GitHubMobile/GitHubMobile/MainViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "29"
-                  endingLineNumber = "29"
-                  offsetFromSymbolStart = "254">
+                  startingLineNumber = "65"
+                  endingLineNumber = "65"
+                  offsetFromSymbolStart = "56">
                </Location>
                <Location
-                  uuid = "D6E9A409-7B2A-4916-A3C4-7A46416668EC - 56d8e35095f0b7de"
+                  uuid = "66180E52-38CD-4539-8158-083D3723432A - 64e09110d44a9677"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Result&lt;GitHubMobile.User, GitHubMobile.AuthError&gt;) -&gt; () in GitHubMobile.MainViewController.viewDidLoad() -&gt; ()"
+                  symbolName = "closure #1 (__C.UIImage) -&gt; () in GitHubMobile.MainViewController.(getImage in _F52285BFBC6739338AD6FEA4AFDDFD07)() -&gt; ()"
                   moduleName = "GitHubMobile"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/chiki-briki/Documents/GitHubMobile/GitHubMobile/MainViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "29"
-                  endingLineNumber = "29"
-                  offsetFromSymbolStart = "310">
-               </Location>
-               <Location
-                  uuid = "D6E9A409-7B2A-4916-A3C4-7A46416668EC - 56d8e35095f0b7de"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Result&lt;GitHubMobile.User, GitHubMobile.AuthError&gt;) -&gt; () in GitHubMobile.MainViewController.viewDidLoad() -&gt; ()"
-                  moduleName = "GitHubMobile"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/chiki-briki/Documents/GitHubMobile/GitHubMobile/MainViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "29"
-                  endingLineNumber = "29"
-                  offsetFromSymbolStart = "1140">
+                  startingLineNumber = "66"
+                  endingLineNumber = "66"
+                  offsetFromSymbolStart = "104">
                </Location>
             </Locations>
          </BreakpointContent>
