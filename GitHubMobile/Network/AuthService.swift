@@ -68,7 +68,7 @@ class AuthService {
             } catch {
                 completionHandler(.failure(.wrongData))
             }
-        }
+        }.resume()
     }
 }
 

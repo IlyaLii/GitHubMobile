@@ -11,6 +11,7 @@ import UIKit
 class MainViewController: UIViewController {
     
     private var authService: AuthService!
+    
     var userInfo: User! {
         didSet {
             DispatchQueue.main.async {
@@ -20,17 +21,34 @@ class MainViewController: UIViewController {
             self.getImage()
         }
     }
+    
     private var avatarImage: UIImage? {
         didSet {
-            guard let tableView = self.tableView else { return }
-            tableView.reloadData()
+            DispatchQueue.main.async {
+                guard let tableView = self.tableView else { return }
+                tableView.reloadData()
+            }
         }
     }
-    //private var repos:
+    
+    private var repos = [Repos]() {
+        didSet {
+            DispatchQueue.main.async {
+                guard let tableView = self.tableView else { return }
+                tableView.reloadData()
+            }
+        }
+    }
+    
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupModels()
+        setupUI()
+    }
+    
+    private func setupModels() {
         authService = AuthService()
         if userInfo == nil {
             authService.userInfo { (result) in
@@ -44,9 +62,18 @@ class MainViewController: UIViewController {
                 }
             }
         }
-        setupUI()
+        
+        authService.reposInfo { (result) in
+            switch result {
+            case.success(let repos):
+                self.repos = repos
+            case.failure(let error):
+                DispatchQueue.main.async {
+                    self.showAlert(error: error.rawValue)
+                }
+            }
+        }
     }
-    
     private func setupUI() {
         let button = UIBarButtonItem(title: "", style: .done, target: nil, action: nil)
         navigationItem.leftBarButtonItem = button
@@ -76,24 +103,32 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
             cell.profileImage.image = avatarImage
             return cell
         } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! ReposCell
+            let repo = repos[indexPath.row]
+            cell.nameLabel.text = repo.name
+            cell.privacyLabel.text = repo.private ? "Private" : "Public"
+            //cell.updateLabel.text = repo.updated_at.removeLast(10)
             return cell
         }
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return 2
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        if section == 0 {
+            return 1
+        } else {
+            return repos.count
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.section == 0 {
             return 150
         } else {
-            return 44
+            return 100
         }
     }
     
