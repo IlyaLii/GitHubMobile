@@ -27,7 +27,7 @@ class AuthService {
         self.loginData = loginData
     }
 
-    func userInfo(completionHandler: @escaping(Result<User, AuthError>) -> Void) {
+    func userInfo(completionHandler: @escaping(Result<User, NetworkingError>) -> Void) {
         
         guard let url = URL(string: "https://api.github.com/user") else { return }
         var request = URLRequest(url: url)
@@ -44,10 +44,31 @@ class AuthService {
                 let user = try JSONDecoder().decode(User.self, from: data)
                 completionHandler(.success(user))
             } catch {
-                print(error)
+                //print(error)
                 completionHandler(.failure(.wrongData))
             }
         }.resume()
+    }
+    
+    func reposInfo(completionHandler: @escaping(Result<[Repos], NetworkingError>) -> Void) {
+        guard let url = URL(string: "https://api.github.com/user/repos") else { return }
+        var request = URLRequest(url: url)
+        request.setValue("Basic \(loginData!)", forHTTPHeaderField: "Authorization")
+        
+        let session = URLSession.shared
+        session.dataTask(with: request) { (data, _, error) in
+            guard let data = data else {
+                completionHandler(.failure(.noInternet))
+                return
+            }
+            
+            do {
+                let repos = try JSONDecoder().decode([Repos].self, from: data)
+                completionHandler(.success(repos))
+            } catch {
+                completionHandler(.failure(.wrongData))
+            }
+        }
     }
 }
 

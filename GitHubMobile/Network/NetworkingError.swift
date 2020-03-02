@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum AuthError: String, Error {
+enum NetworkingError: String, Error {
     case noInternet = "Check your Internet connection"
     case wrongData = "Wrong login or password"
 }

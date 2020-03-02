@@ -115,11 +115,11 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "29FFEC82-98AA-46BF-82EA-6A4032AD8A90 - ca15eab5ad3fbbb1"
+                  uuid = "29FFEC82-98AA-46BF-82EA-6A4032AD8A90 - 8b29e33c2b93e530"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Result&lt;GitHubMobile.User, GitHubMobile.AuthError&gt;) -&gt; () in GitHubMobile.LoginViewController.(userInfo in _6B1780BBEA58D4B41C402D5133102B02)() -&gt; ()"
+                  symbolName = "closure #1 (Swift.Result&lt;GitHubMobile.User, GitHubMobile.NetworkingError&gt;) -&gt; () in GitHubMobile.LoginViewController.(userInfo in _6B1780BBEA58D4B41C402D5133102B02)() -&gt; ()"
                   moduleName = "GitHubMobile"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/chiki-briki/Documents/GitHubMobile/GitHubMobile/LoginViewController.swift"
@@ -130,11 +130,11 @@
                   offsetFromSymbolStart = "202">
                </Location>
                <Location
-                  uuid = "29FFEC82-98AA-46BF-82EA-6A4032AD8A90 - ca15eab5ad3fbbb1"
+                  uuid = "29FFEC82-98AA-46BF-82EA-6A4032AD8A90 - 8b29e33c2b93e530"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Result&lt;GitHubMobile.User, GitHubMobile.AuthError&gt;) -&gt; () in GitHubMobile.LoginViewController.(userInfo in _6B1780BBEA58D4B41C402D5133102B02)() -&gt; ()"
+                  symbolName = "closure #1 (Swift.Result&lt;GitHubMobile.User, GitHubMobile.NetworkingError&gt;) -&gt; () in GitHubMobile.LoginViewController.(userInfo in _6B1780BBEA58D4B41C402D5133102B02)() -&gt; ()"
                   moduleName = "GitHubMobile"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/chiki-briki/Documents/GitHubMobile/GitHubMobile/LoginViewController.swift"
@@ -145,11 +145,11 @@
                   offsetFromSymbolStart = "255">
                </Location>
                <Location
-                  uuid = "29FFEC82-98AA-46BF-82EA-6A4032AD8A90 - ca15eab5ad3fbbb1"
+                  uuid = "29FFEC82-98AA-46BF-82EA-6A4032AD8A90 - 8b29e33c2b93e530"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Result&lt;GitHubMobile.User, GitHubMobile.AuthError&gt;) -&gt; () in GitHubMobile.LoginViewController.(userInfo in _6B1780BBEA58D4B41C402D5133102B02)() -&gt; ()"
+                  symbolName = "closure #1 (Swift.Result&lt;GitHubMobile.User, GitHubMobile.NetworkingError&gt;) -&gt; () in GitHubMobile.LoginViewController.(userInfo in _6B1780BBEA58D4B41C402D5133102B02)() -&gt; ()"
                   moduleName = "GitHubMobile"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/chiki-briki/Documents/GitHubMobile/GitHubMobile/LoginViewController.swift"

@@ -15,9 +15,10 @@
 		D81EC10A240A68E700F87E0C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81EC109240A68E700F87E0C /* MainViewController.swift */; };
 		D81EC10C240A691700F87E0C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81EC10B240A691700F87E0C /* LoginViewController.swift */; };
 		D8235FFC240DA9E600D3DF57 /* ReposCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8235FFB240DA9E600D3DF57 /* ReposCell.swift */; };
+		D8235FFE240DAF2900D3DF57 /* Repos.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8235FFD240DAF2900D3DF57 /* Repos.swift */; };
 		D86516C9240A860900C7C77C /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86516C8240A860900C7C77C /* AuthService.swift */; };
 		D8CC931B240BB47600BBEE5C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CC931A240BB47600BBEE5C /* User.swift */; };
-		D8CC931D240BBC5300BBEE5C /* AuthError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CC931C240BBC5300BBEE5C /* AuthError.swift */; };
+		D8CC931D240BBC5300BBEE5C /* NetworkingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CC931C240BBC5300BBEE5C /* NetworkingError.swift */; };
 		D8CC931F240BE32500BBEE5C /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CC931E240BE32500BBEE5C /* ProfileCell.swift */; };
 		D8CC9323240C527700BBEE5C /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CC9322240C527700BBEE5C /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
@@ -33,9 +34,10 @@
 		D81EC109240A68E700F87E0C /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		D81EC10B240A691700F87E0C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D8235FFB240DA9E600D3DF57 /* ReposCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReposCell.swift; sourceTree = "<group>"; };
+		D8235FFD240DAF2900D3DF57 /* Repos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repos.swift; sourceTree = "<group>"; };
 		D86516C8240A860900C7C77C /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		D8CC931A240BB47600BBEE5C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		D8CC931C240BBC5300BBEE5C /* AuthError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthError.swift; sourceTree = "<group>"; };
+		D8CC931C240BBC5300BBEE5C /* NetworkingError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingError.swift; sourceTree = "<group>"; };
 		D8CC931E240BE32500BBEE5C /* ProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
 		D8CC9322240C527700BBEE5C /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -88,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				D8CC931A240BB47600BBEE5C /* User.swift */,
+				D8235FFD240DAF2900D3DF57 /* Repos.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -96,7 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				D8CC9322240C527700BBEE5C /* NetworkManager.swift */,
-				D8CC931C240BBC5300BBEE5C /* AuthError.swift */,
+				D8CC931C240BBC5300BBEE5C /* NetworkingError.swift */,
 				D86516C8240A860900C7C77C /* AuthService.swift */,
 			);
 			path = Network;
@@ -183,6 +186,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8235FFE240DAF2900D3DF57 /* Repos.swift in Sources */,
 				D8CC9323240C527700BBEE5C /* NetworkManager.swift in Sources */,
 				D81EC10C240A691700F87E0C /* LoginViewController.swift in Sources */,
 				D81EC10A240A68E700F87E0C /* MainViewController.swift in Sources */,
@@ -191,7 +195,7 @@
 				D81EC0F6240A688100F87E0C /* AppDelegate.swift in Sources */,
 				D8CC931F240BE32500BBEE5C /* ProfileCell.swift in Sources */,
 				D81EC0F8240A688100F87E0C /* SceneDelegate.swift in Sources */,
-				D8CC931D240BBC5300BBEE5C /* AuthError.swift in Sources */,
+				D8CC931D240BBC5300BBEE5C /* NetworkingError.swift in Sources */,
 				D8235FFC240DA9E600D3DF57 /* ReposCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
