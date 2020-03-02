@@ -127,7 +127,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "46"
                   endingLineNumber = "46"
-                  offsetFromSymbolStart = "172">
+                  offsetFromSymbolStart = "202">
                </Location>
                <Location
                   uuid = "29FFEC82-98AA-46BF-82EA-6A4032AD8A90 - ca15eab5ad3fbbb1"
@@ -142,7 +142,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "46"
                   endingLineNumber = "46"
-                  offsetFromSymbolStart = "216">
+                  offsetFromSymbolStart = "255">
                </Location>
                <Location
                   uuid = "29FFEC82-98AA-46BF-82EA-6A4032AD8A90 - ca15eab5ad3fbbb1"
@@ -157,7 +157,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "46"
                   endingLineNumber = "46"
-                  offsetFromSymbolStart = "832">
+                  offsetFromSymbolStart = "1038">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -176,38 +176,6 @@
             endingLineNumber = "17"
             landmarkName = "downloadImage(url:completionHandler:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "665633DB-5CC8-45DD-89CE-BC434D663B0E - 7c9d41e1d691102f"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "static GitHubMobile.NetworkManager.downloadImage(url: Swift.String, completionHandler: (__C.UIImage) -&gt; ()) -&gt; ()"
-                  moduleName = "GitHubMobile"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/chiki-briki/Documents/GitHubMobile/GitHubMobile/NetworkManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "17"
-                  endingLineNumber = "17"
-                  offsetFromSymbolStart = "392">
-               </Location>
-               <Location
-                  uuid = "665633DB-5CC8-45DD-89CE-BC434D663B0E - 9830d97352bba14e"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in static GitHubMobile.NetworkManager.downloadImage(url: Swift.String, completionHandler: (__C.UIImage) -&gt; ()) -&gt; ()"
-                  moduleName = "GitHubMobile"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/chiki-briki/Documents/GitHubMobile/GitHubMobile/NetworkManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "18"
-                  endingLineNumber = "18"
-                  offsetFromSymbolStart = "232">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -268,8 +236,8 @@
             filePath = "GitHubMobile/MainViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "103"
-            endingLineNumber = "103"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -288,38 +256,22 @@
             endingLineNumber = "64"
             landmarkName = "getImage()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "66180E52-38CD-4539-8158-083D3723432A - 6900cd980312e274"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "GitHubMobile.MainViewController.(getImage in _F52285BFBC6739338AD6FEA4AFDDFD07)() -&gt; ()"
-                  moduleName = "GitHubMobile"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/chiki-briki/Documents/GitHubMobile/GitHubMobile/MainViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "65"
-                  endingLineNumber = "65"
-                  offsetFromSymbolStart = "56">
-               </Location>
-               <Location
-                  uuid = "66180E52-38CD-4539-8158-083D3723432A - 64e09110d44a9677"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (__C.UIImage) -&gt; () in GitHubMobile.MainViewController.(getImage in _F52285BFBC6739338AD6FEA4AFDDFD07)() -&gt; ()"
-                  moduleName = "GitHubMobile"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/chiki-briki/Documents/GitHubMobile/GitHubMobile/MainViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "66"
-                  endingLineNumber = "66"
-                  offsetFromSymbolStart = "104">
-               </Location>
-            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B6CC4CA2-11AB-4A32-856B-007A2D95D469"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GitHubMobile/MainPage/ProfileCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "awakeFromNib()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

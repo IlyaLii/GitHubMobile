@@ -29,7 +29,6 @@ class MainViewController: UIViewController {
     //private var repos:
     @IBOutlet weak var tableView: UITableView!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         authService = AuthService()
@@ -65,35 +64,15 @@ class MainViewController: UIViewController {
             self.avatarImage = result
         }
     }
-    
-//    private func makeAttributedText() -> NSAttributedString {
-//        let string = NSMutableAttributedString(string: userInfo.name)
-//
-//        guard let bio = userInfo.bio else { return string }
-//        let bioString = NSAttributedString(string: "\n\(bio)")
-//        string.append(bioString)
-//
-//        guard let email = userInfo.email else { return string }
-//        let emailString = NSAttributedString(string: "\n\(email)")
-//        string.append(emailString)
-//
-//        guard let company = userInfo.company else { return string }
-//        let companyString = NSAttributedString(string: "\n\(company)")
-//        string.append(companyString)
-//
-//        return string
-//    }
 }
 
 extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileCell", for: indexPath) as! ProfileCell
+            cell.selectionStyle = .none
             guard let userInfo = userInfo else { return cell }
             cell.nameLabel.text = userInfo.name
-            cell.statusLabel.text = userInfo.bio
-            cell.workLabel.text = userInfo.company
-            cell.emailLabel.text = userInfo.email
             cell.profileImage.image = avatarImage
             return cell
         } else {
@@ -118,15 +97,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
     
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        if section == 0 {
-            let view = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 18))
-            let label = UILabel()
-            label.text = "User"
-            view.addSubview(label)
-            return view
-        }
-        return UIView()
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
     }
-    
 }

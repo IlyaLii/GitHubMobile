@@ -14,6 +14,7 @@
 		D81EC102240A688300F87E0C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D81EC100240A688300F87E0C /* LaunchScreen.storyboard */; };
 		D81EC10A240A68E700F87E0C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81EC109240A68E700F87E0C /* MainViewController.swift */; };
 		D81EC10C240A691700F87E0C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81EC10B240A691700F87E0C /* LoginViewController.swift */; };
+		D8235FFC240DA9E600D3DF57 /* ReposCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8235FFB240DA9E600D3DF57 /* ReposCell.swift */; };
 		D86516C9240A860900C7C77C /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86516C8240A860900C7C77C /* AuthService.swift */; };
 		D8CC931B240BB47600BBEE5C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CC931A240BB47600BBEE5C /* User.swift */; };
 		D8CC931D240BBC5300BBEE5C /* AuthError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CC931C240BBC5300BBEE5C /* AuthError.swift */; };
@@ -31,6 +32,7 @@
 		D81EC103240A688300F87E0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D81EC109240A68E700F87E0C /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		D81EC10B240A691700F87E0C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		D8235FFB240DA9E600D3DF57 /* ReposCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReposCell.swift; sourceTree = "<group>"; };
 		D86516C8240A860900C7C77C /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		D8CC931A240BB47600BBEE5C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D8CC931C240BBC5300BBEE5C /* AuthError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthError.swift; sourceTree = "<group>"; };
@@ -71,18 +73,43 @@
 				D81EC0F5240A688100F87E0C /* AppDelegate.swift */,
 				D81EC0F7240A688100F87E0C /* SceneDelegate.swift */,
 				D81EC0FB240A688100F87E0C /* Main.storyboard */,
-				D8CC9322240C527700BBEE5C /* NetworkManager.swift */,
 				D81EC10B240A691700F87E0C /* LoginViewController.swift */,
-				D8CC931C240BBC5300BBEE5C /* AuthError.swift */,
-				D86516C8240A860900C7C77C /* AuthService.swift */,
-				D8CC931A240BB47600BBEE5C /* User.swift */,
-				D81EC109240A68E700F87E0C /* MainViewController.swift */,
-				D8CC931E240BE32500BBEE5C /* ProfileCell.swift */,
+				D8235FFA240D7A9000D3DF57 /* MainPage */,
+				D8235FF9240D7A7E00D3DF57 /* Network */,
+				D8235FF8240D7A6B00D3DF57 /* Models */,
 				D81EC0FE240A688300F87E0C /* Assets.xcassets */,
 				D81EC100240A688300F87E0C /* LaunchScreen.storyboard */,
 				D81EC103240A688300F87E0C /* Info.plist */,
 			);
 			path = GitHubMobile;
+			sourceTree = "<group>";
+		};
+		D8235FF8240D7A6B00D3DF57 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D8CC931A240BB47600BBEE5C /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D8235FF9240D7A7E00D3DF57 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				D8CC9322240C527700BBEE5C /* NetworkManager.swift */,
+				D8CC931C240BBC5300BBEE5C /* AuthError.swift */,
+				D86516C8240A860900C7C77C /* AuthService.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		D8235FFA240D7A9000D3DF57 /* MainPage */ = {
+			isa = PBXGroup;
+			children = (
+				D81EC109240A68E700F87E0C /* MainViewController.swift */,
+				D8CC931E240BE32500BBEE5C /* ProfileCell.swift */,
+				D8235FFB240DA9E600D3DF57 /* ReposCell.swift */,
+			);
+			path = MainPage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,6 +192,7 @@
 				D8CC931F240BE32500BBEE5C /* ProfileCell.swift in Sources */,
 				D81EC0F8240A688100F87E0C /* SceneDelegate.swift in Sources */,
 				D8CC931D240BBC5300BBEE5C /* AuthError.swift in Sources */,
+				D8235FFC240DA9E600D3DF57 /* ReposCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,12 +10,9 @@ import UIKit
 
 class ProfileCell: UITableViewCell {
 
-    
-    @IBOutlet weak var emailLabel: UILabel!
-    @IBOutlet weak var workLabel: UILabel!
+  
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var statusLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
