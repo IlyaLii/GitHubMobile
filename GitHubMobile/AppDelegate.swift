@@ -16,9 +16,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         if #available(iOS 13, *) {
             let appearance = UINavigationBarAppearance()
-            appearance.backgroundColor = .lightGray
-            appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
-            appearance.titleTextAttributes = [.foregroundColor: UIColor.white]
+            appearance.backgroundColor = .white
+            appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.black]
+            appearance.titleTextAttributes = [.foregroundColor: UIColor.black]
             UINavigationBar.appearance().standardAppearance = appearance
             UINavigationBar.appearance().scrollEdgeAppearance = appearance
         }

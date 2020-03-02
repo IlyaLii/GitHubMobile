@@ -26,7 +26,7 @@ class LoginViewController: UIViewController {
     private func setupUI() {
         loginButton.layer.cornerRadius = 10
         loginButton.layer.borderColor = UIColor.lightGray.cgColor
-        loginButton.layer.borderWidth = 2
+        loginButton.layer.borderWidth = 1
         navigationController?.navigationBar.prefersLargeTitles = true
     }
     
