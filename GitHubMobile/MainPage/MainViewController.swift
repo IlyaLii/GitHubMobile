@@ -49,7 +49,7 @@ class MainViewController: UIViewController {
     }
     
     private func setupModels() {
-        authService = AuthService()
+        authService = AuthService.shared
         if userInfo == nil {
             authService.userInfo { (result) in
                 switch result {
@@ -133,10 +133,13 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-        let repoName = repos[indexPath.row].name
-        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "RepoVC") as! RepoViewController
-        vc.repoName = repoName
-        navigationController?.pushViewController(vc, animated: true)
+        if indexPath.section == 1 {
+            tableView.deselectRow(at: indexPath, animated: true)
+            let repoName = repos[indexPath.row].name
+            let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "RepoVC") as! RepoViewController
+            vc.repoName = repoName
+            vc.owner = userInfo.login
+            navigationController?.pushViewController(vc, animated: true)
+        }
     }
 }

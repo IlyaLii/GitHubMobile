@@ -10,6 +10,7 @@ import Foundation
 
 class AuthService {
     
+    static let shared = AuthService()
     private var login: String?
     private var password: String?
     private var loginData: String!
@@ -95,13 +96,15 @@ class AuthService {
 //        }.resume()
 //    }
     
-    func branchsInfo(nameRepo: String, completionHandler: @escaping(Result<[Branch], NetworkingError>) -> Void) {
-        guard let url = URL(string: "https://api.github.com/repos/user/\(nameRepo)/branches") else { return }
+    func branchsInfo(owner: String, nameRepo: String, completionHandler: @escaping(Result<[Branch], NetworkingError>) -> Void) {
+        guard let url = URL(string: "https://api.github.com/repos/\(owner)/\(nameRepo)/branches") else { return }
         var request = URLRequest(url: url)
         request.setValue("Basic \(loginData!)", forHTTPHeaderField: "Authorization")
         
         let session = URLSession.shared
-        session.dataTask(with: request) { (data, _, error) in
+        session.dataTask(with: request) { (data, response, error) in
+//            guard let response = response else { return }
+//            print(response)
             guard let data = data else {
                 completionHandler(.failure(.noInternet))
                 return

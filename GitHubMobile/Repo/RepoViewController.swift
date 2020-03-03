@@ -11,16 +11,45 @@ import UIKit
 class RepoViewController: UITableViewController {
 
     var repoName: String!
+    var owner: String!
+    private var branchs = [Branch]()
+    private var selectedBranch = "master"
+    private var authService: AuthService!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        authService = AuthService.shared
+        setupModels()
         title = repoName
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        let button = UIBarButtonItem(title: "Branch", style: .plain, target: self, action: #selector(branchTapped(sender:)))
+        navigationItem.rightBarButtonItem = button
     }
 
+    func setupModels() {
+        guard let repoName = repoName else { return }
+        guard let owner = owner else { return }
+        authService.branchsInfo(owner: owner, nameRepo: repoName) { (result) in
+            switch result {
+            case.success(let branchs):
+                self.branchs = branchs
+            case.failure(let error):
+                DispatchQueue.main.async {
+                    self.showAlert(error: error.rawValue)
+                }
+            }
+        }
+    }
+    
+    private func showAlert(error: String) {
+        let alert = UIAlertController(title: "Error", message: error, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        present(alert, animated: true, completion: nil)
+    }
+    
+    @objc func branchTapped(sender: UIBarButtonItem) {
+        print(#function)
+    }
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {

@@ -11,6 +11,7 @@ import Foundation
 struct User: Decodable {
     var avatar_url: String
     var name: String
+    var login: String
     var company: String?
     var email: String?
     var bio: String?
