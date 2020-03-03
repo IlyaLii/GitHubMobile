@@ -27,6 +27,7 @@ class AuthService {
         self.loginData = loginData
     }
 
+    //MARK: -MainViewController
     func userInfo(completionHandler: @escaping(Result<User, NetworkingError>) -> Void) {
         
         guard let url = URL(string: "https://api.github.com/user") else { return }
@@ -65,6 +66,50 @@ class AuthService {
             do {
                 let repos = try JSONDecoder().decode([Repos].self, from: data)
                 completionHandler(.success(repos))
+            } catch {
+                completionHandler(.failure(.wrongData))
+            }
+        }.resume()
+    }
+    
+    //MARK: - RepoViewController
+    
+//    func refsInfo(nameRepo: String, completionHandler: @escaping(Result<[Repos], NetworkingError>) -> Void) {
+//        guard let url = URL(string: "https://api.github.com/repos/user/\(nameRepo)/git/refs") else { return }
+//        var request = URLRequest(url: url)
+//        request.setValue("Basic \(loginData!)", forHTTPHeaderField: "Authorization")
+//
+//        let session = URLSession.shared
+//        session.dataTask(with: request) { (data, _, error) in
+//            guard let data = data else {
+//                completionHandler(.failure(.noInternet))
+//                return
+//            }
+//
+//            do {
+//                let repos = try JSONDecoder().decode([Repos].self, from: data)
+//                completionHandler(.success(repos))
+//            } catch {
+//                completionHandler(.failure(.wrongData))
+//            }
+//        }.resume()
+//    }
+    
+    func branchsInfo(nameRepo: String, completionHandler: @escaping(Result<[Branch], NetworkingError>) -> Void) {
+        guard let url = URL(string: "https://api.github.com/repos/user/\(nameRepo)/branches") else { return }
+        var request = URLRequest(url: url)
+        request.setValue("Basic \(loginData!)", forHTTPHeaderField: "Authorization")
+        
+        let session = URLSession.shared
+        session.dataTask(with: request) { (data, _, error) in
+            guard let data = data else {
+                completionHandler(.failure(.noInternet))
+                return
+            }
+            
+            do {
+                let branchs = try JSONDecoder().decode([Branch].self, from: data)
+                completionHandler(.success(branchs))
             } catch {
                 completionHandler(.failure(.wrongData))
             }
