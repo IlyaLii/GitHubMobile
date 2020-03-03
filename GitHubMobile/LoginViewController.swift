@@ -54,15 +54,9 @@ class LoginViewController: UIViewController {
                 }
             case .failure(let error):
                 DispatchQueue.main.async {
-                    self.showAlert(error: error.rawValue)
+                    self.showAlert(message: error.rawValue)
                 }
             }
         }
-    }
-    
-    private func showAlert(error: String) {
-        let alert = UIAlertController(title: "Error", message: error, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-        present(alert, animated: true, completion: nil)
     }
 }

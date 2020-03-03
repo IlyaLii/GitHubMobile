@@ -8,7 +8,7 @@
 
 import Foundation
 
-class AuthService {
+final class AuthService {
     
     static let shared = AuthService()
     private var login: String?
@@ -41,7 +41,6 @@ class AuthService {
                 completionHandler(.failure(.noInternet))
                 return
             }
-            
             do {
                 let user = try JSONDecoder().decode(User.self, from: data)
                 completionHandler(.success(user))
@@ -75,27 +74,6 @@ class AuthService {
     
     //MARK: - RepoViewController
     
-//    func refsInfo(nameRepo: String, completionHandler: @escaping(Result<[Repos], NetworkingError>) -> Void) {
-//        guard let url = URL(string: "https://api.github.com/repos/user/\(nameRepo)/git/refs") else { return }
-//        var request = URLRequest(url: url)
-//        request.setValue("Basic \(loginData!)", forHTTPHeaderField: "Authorization")
-//
-//        let session = URLSession.shared
-//        session.dataTask(with: request) { (data, _, error) in
-//            guard let data = data else {
-//                completionHandler(.failure(.noInternet))
-//                return
-//            }
-//
-//            do {
-//                let repos = try JSONDecoder().decode([Repos].self, from: data)
-//                completionHandler(.success(repos))
-//            } catch {
-//                completionHandler(.failure(.wrongData))
-//            }
-//        }.resume()
-//    }
-    
     func branchsInfo(owner: String, nameRepo: String, completionHandler: @escaping(Result<[Branch], NetworkingError>) -> Void) {
         guard let url = URL(string: "https://api.github.com/repos/\(owner)/\(nameRepo)/branches") else { return }
         var request = URLRequest(url: url)
@@ -103,8 +81,6 @@ class AuthService {
         
         let session = URLSession.shared
         session.dataTask(with: request) { (data, response, error) in
-//            guard let response = response else { return }
-//            print(response)
             guard let data = data else {
                 completionHandler(.failure(.noInternet))
                 return

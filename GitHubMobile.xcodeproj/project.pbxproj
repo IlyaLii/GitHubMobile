@@ -20,6 +20,8 @@
 		D8236002240E3A6E00D3DF57 /* FileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8236001240E3A6E00D3DF57 /* FileCell.swift */; };
 		D8236004240E3A8500D3DF57 /* RepoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8236003240E3A8500D3DF57 /* RepoViewController.swift */; };
 		D8236007240E486D00D3DF57 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8236006240E486D00D3DF57 /* String.swift */; };
+		D8236009240E74D400D3DF57 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8236008240E74D400D3DF57 /* UIViewController.swift */; };
+		D82B8512240E822C002EE54F /* PopOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82B8511240E822C002EE54F /* PopOverViewController.swift */; };
 		D86516C9240A860900C7C77C /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86516C8240A860900C7C77C /* AuthService.swift */; };
 		D8CC931B240BB47600BBEE5C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CC931A240BB47600BBEE5C /* User.swift */; };
 		D8CC931D240BBC5300BBEE5C /* NetworkingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CC931C240BBC5300BBEE5C /* NetworkingError.swift */; };
@@ -43,6 +45,8 @@
 		D8236001240E3A6E00D3DF57 /* FileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileCell.swift; sourceTree = "<group>"; };
 		D8236003240E3A8500D3DF57 /* RepoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoViewController.swift; sourceTree = "<group>"; };
 		D8236006240E486D00D3DF57 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		D8236008240E74D400D3DF57 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		D82B8511240E822C002EE54F /* PopOverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopOverViewController.swift; sourceTree = "<group>"; };
 		D86516C8240A860900C7C77C /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		D8CC931A240BB47600BBEE5C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D8CC931C240BBC5300BBEE5C /* NetworkingError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingError.swift; sourceTree = "<group>"; };
@@ -84,7 +88,7 @@
 				D81EC0F7240A688100F87E0C /* SceneDelegate.swift */,
 				D81EC0FB240A688100F87E0C /* Main.storyboard */,
 				D81EC10B240A691700F87E0C /* LoginViewController.swift */,
-				D8236006240E486D00D3DF57 /* String.swift */,
+				D823600A240E74FE00D3DF57 /* Extensions */,
 				D8235FFA240D7A9000D3DF57 /* MainPage */,
 				D8236005240E3A8C00D3DF57 /* Repo */,
 				D8235FF9240D7A7E00D3DF57 /* Network */,
@@ -131,8 +135,18 @@
 			children = (
 				D8236001240E3A6E00D3DF57 /* FileCell.swift */,
 				D8236003240E3A8500D3DF57 /* RepoViewController.swift */,
+				D82B8511240E822C002EE54F /* PopOverViewController.swift */,
 			);
 			path = Repo;
+			sourceTree = "<group>";
+		};
+		D823600A240E74FE00D3DF57 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D8236006240E486D00D3DF57 /* String.swift */,
+				D8236008240E74D400D3DF57 /* UIViewController.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -215,11 +229,13 @@
 				D81EC10A240A68E700F87E0C /* MainViewController.swift in Sources */,
 				D8CC931B240BB47600BBEE5C /* User.swift in Sources */,
 				D86516C9240A860900C7C77C /* AuthService.swift in Sources */,
+				D82B8512240E822C002EE54F /* PopOverViewController.swift in Sources */,
 				D81EC0F6240A688100F87E0C /* AppDelegate.swift in Sources */,
 				D8CC931F240BE32500BBEE5C /* ProfileCell.swift in Sources */,
 				D81EC0F8240A688100F87E0C /* SceneDelegate.swift in Sources */,
 				D8236007240E486D00D3DF57 /* String.swift in Sources */,
 				D8CC931D240BBC5300BBEE5C /* NetworkingError.swift in Sources */,
+				D8236009240E74D400D3DF57 /* UIViewController.swift in Sources */,
 				D8235FFC240DA9E600D3DF57 /* ReposCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

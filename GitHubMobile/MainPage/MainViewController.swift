@@ -57,7 +57,7 @@ class MainViewController: UIViewController {
                     self.userInfo = user
                 case.failure(let error):
                     DispatchQueue.main.async {
-                        self.showAlert(error: error.rawValue)
+                        self.showAlert(message: error.rawValue)
                     }
                 }
             }
@@ -69,7 +69,7 @@ class MainViewController: UIViewController {
                 self.repos = repos
             case.failure(let error):
                 DispatchQueue.main.async {
-                    self.showAlert(error: error.rawValue)
+                    self.showAlert(message: error.rawValue)
                 }
             }
         }
@@ -78,12 +78,6 @@ class MainViewController: UIViewController {
         let button = UIBarButtonItem(title: "", style: .done, target: nil, action: nil)
         navigationItem.leftBarButtonItem = button
         title = "Profile"
-    }
-    
-    private func showAlert(error: String) {
-        let alert = UIAlertController(title: "Error", message: error, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-        present(alert, animated: true, completion: nil)
     }
     
     private func getImage() {
