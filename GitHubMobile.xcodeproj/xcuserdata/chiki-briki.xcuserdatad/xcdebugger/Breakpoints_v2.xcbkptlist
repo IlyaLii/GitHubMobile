@@ -310,7 +310,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "3D11B749-6538-49EF-A4BA-D59B64E8F3B1"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GitHubMobile/MainPage/MainViewController.swift"
@@ -320,13 +320,75 @@
             endingLineNumber = "34"
             landmarkName = "repos"
             landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "3D11B749-6538-49EF-A4BA-D59B64E8F3B1 - 9f0487e0f84d086f"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GitHubMobile.MainViewController.(repos in _F52285BFBC6739338AD6FEA4AFDDFD07).modify : Swift.Array&lt;GitHubMobile.Repos&gt;"
+                  moduleName = "GitHubMobile"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/chiki-briki/Documents/GitHubMobile/GitHubMobile/MainPage/MainViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "26">
+               </Location>
+               <Location
+                  uuid = "3D11B749-6538-49EF-A4BA-D59B64E8F3B1 - e9c478edb8f408e7"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GitHubMobile.MainViewController.(repos in _F52285BFBC6739338AD6FEA4AFDDFD07).modify : Swift.Array&lt;GitHubMobile.Repos&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "GitHubMobile"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/chiki-briki/Documents/GitHubMobile/GitHubMobile/MainPage/MainViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "27">
+               </Location>
+               <Location
+                  uuid = "3D11B749-6538-49EF-A4BA-D59B64E8F3B1 - 94b594860f32eb36"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GitHubMobile.MainViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; GitHubMobile.MainViewController"
+                  moduleName = "GitHubMobile"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/chiki-briki/Documents/GitHubMobile/GitHubMobile/MainPage/MainViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "520">
+               </Location>
+               <Location
+                  uuid = "3D11B749-6538-49EF-A4BA-D59B64E8F3B1 - 110fd0b9cf103131"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GitHubMobile.MainViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;GitHubMobile.MainViewController&gt;"
+                  moduleName = "GitHubMobile"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/chiki-briki/Documents/GitHubMobile/GitHubMobile/MainPage/MainViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "457">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "2AAF90DC-BF03-4750-A5D5-89371E19D163"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GitHubMobile/Network/AuthService.swift"
@@ -358,7 +420,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "AC3B40FF-B4F2-4D1D-9D22-E857591EE08E"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GitHubMobile/Network/AuthService.swift"
@@ -368,6 +430,22 @@
             endingLineNumber = "60"
             landmarkName = "reposInfo(completionHandler:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "EC3D5663-4C4E-4DF3-95B0-857010649603"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GitHubMobile/MainPage/MainViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "repos"
+            landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

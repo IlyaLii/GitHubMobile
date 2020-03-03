@@ -107,7 +107,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
             let repo = repos[indexPath.row]
             cell.nameLabel.text = repo.name
             cell.privacyLabel.text = repo.private ? "Private" : "Public"
-            //cell.updateLabel.text = repo.updated_at.removeLast(10)
+            cell.updateLabel.text = "Last Update: \(repo.updated_at.convertData())"
             return cell
         }
     }
