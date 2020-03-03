@@ -42,14 +42,13 @@ class RepoViewController: UITableViewController {
     
     @objc func branchTapped(sender: UIBarButtonItem!) {
         let vc = PopOverViewController()
+        vc.delegate = self
         vc.modalPresentationStyle = .popover
         vc.branchs = branchs
         vc.preferredContentSize = CGSize(width: 150, height: 45 * branchs.count)
         guard let ppc = vc.popoverPresentationController else { return }
         ppc.delegate = self
-        ppc.permittedArrowDirections = .up
-        ppc.sourceRect = CGRect(x: view.frame.width, y: 0, width: 0, height: 0)
-        ppc.sourceView = self.view
+        ppc.barButtonItem = sender
         present(vc, animated: true, completion: nil)
     }
     
@@ -69,8 +68,18 @@ class RepoViewController: UITableViewController {
     }
 }
 
-extension RepoViewController: UIPopoverPresentationControllerDelegate {
+extension RepoViewController: UIPopoverPresentationControllerDelegate, PopOverViewControllerDelegate {
+    
+    
+    
+    //MARK: - UIPopoverPresentationControllerDelegate
     func adaptivePresentationStyle(for controller: UIPresentationController, traitCollection: UITraitCollection) -> UIModalPresentationStyle {
         return .none
+    }
+    
+    //MARK: - PopOverViewControllerDelegate
+    
+    func changeBranch(name: String) {
+        selectedBranch = name
     }
 }

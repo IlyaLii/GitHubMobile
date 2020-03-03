@@ -9,12 +9,13 @@
 import UIKit
 
 class PopOverViewController: UITableViewController {
-
     var branchs = [Branch]() {
         didSet {
             tableView.reloadData()
         }
     }
+    
+    var delegate: PopOverViewControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,4 +35,10 @@ class PopOverViewController: UITableViewController {
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        delegate?.changeBranch(name: branchs[indexPath.row].name)
+        self.dismiss(animated: true, completion: nil)
+    }
 }
+
+
