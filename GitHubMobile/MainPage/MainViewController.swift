@@ -65,7 +65,8 @@ class MainViewController: UIViewController {
         
         authService.reposInfo { (result) in
             switch result {
-            case.success(let repos):
+            case.success(var repos):
+                repos.sort {$0.updated_at > $1.updated_at}
                 self.repos = repos
             case.failure(let error):
                 DispatchQueue.main.async {
@@ -100,7 +101,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! ReposCell
             let repo = repos[indexPath.row]
             cell.nameLabel.text = repo.name
-            cell.privacyLabel.text = repo.private ? "Private" : "Public"
+            cell.privacyLabel.text = "\(repo.private ? "Private" : "Public")\(repo.fork ? ", Forked" : "")"
             cell.updateLabel.text = "Last Update: \(repo.updated_at.convertData())"
             return cell
         }

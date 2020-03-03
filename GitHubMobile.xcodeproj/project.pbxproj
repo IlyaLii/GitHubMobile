@@ -92,7 +92,7 @@
 				D81EC10B240A691700F87E0C /* LoginViewController.swift */,
 				D823600A240E74FE00D3DF57 /* Extensions */,
 				D8235FFA240D7A9000D3DF57 /* MainPage */,
-				D8236005240E3A8C00D3DF57 /* Repo */,
+				D8236005240E3A8C00D3DF57 /* RepoPage */,
 				D8235FF9240D7A7E00D3DF57 /* Network */,
 				D8235FF8240D7A6B00D3DF57 /* Models */,
 				D81EC0FE240A688300F87E0C /* Assets.xcassets */,
@@ -132,7 +132,7 @@
 			path = MainPage;
 			sourceTree = "<group>";
 		};
-		D8236005240E3A8C00D3DF57 /* Repo */ = {
+		D8236005240E3A8C00D3DF57 /* RepoPage */ = {
 			isa = PBXGroup;
 			children = (
 				D8236001240E3A6E00D3DF57 /* FileCell.swift */,
@@ -140,7 +140,7 @@
 				D82B8513240EDAF0002EE54F /* PopOverViewControllerDelegate.swift */,
 				D82B8511240E822C002EE54F /* PopOverViewController.swift */,
 			);
-			path = Repo;
+			path = RepoPage;
 			sourceTree = "<group>";
 		};
 		D823600A240E74FE00D3DF57 /* Extensions */ = {

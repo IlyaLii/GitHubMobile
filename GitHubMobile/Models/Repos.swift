@@ -11,5 +11,6 @@ import Foundation
 struct Repos: Decodable {
     var name: String
     var `private`: Bool
+    var fork: Bool
     var updated_at: String
 }
