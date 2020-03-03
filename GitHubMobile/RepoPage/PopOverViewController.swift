@@ -11,7 +11,9 @@ import UIKit
 class PopOverViewController: UITableViewController {
     var branchs = [Branch]() {
         didSet {
-            tableView.reloadData()
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
         }
     }
     
