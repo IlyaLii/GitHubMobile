@@ -118,6 +118,30 @@ final class AuthService {
             }
         }.resume()
     }
+    
+    func treeInfoInTree(url: String, completionHandler: @escaping(Result<[Tree], NetworkingError>) -> Void) {
+        guard let url = URL(string: url) else { return }
+        var request = URLRequest(url: url)
+        request.setValue("Basic \(loginData!)", forHTTPHeaderField: "Authorization")
+        
+        let session = URLSession.shared
+        session.dataTask(with: request) { (data, response, error) in
+            guard let response = response else { return }
+            print(response)
+            guard let data = data else {
+                completionHandler(.failure(.noInternet))
+                return
+            }
+            
+            do {
+                let infoTree = try JSONDecoder().decode(InfoTree.self, from: data)
+                let tree = infoTree.tree
+                completionHandler(.success(tree))
+            } catch {
+                completionHandler(.failure(.wrongData))
+            }
+        }.resume()
+    }
 }
 
 extension AuthService {

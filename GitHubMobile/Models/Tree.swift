@@ -15,4 +15,5 @@ struct InfoTree: Decodable {
 struct Tree: Decodable {
     var path: String
     var url: String?
+    var type: String
 }

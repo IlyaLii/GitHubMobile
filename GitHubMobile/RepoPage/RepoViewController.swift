@@ -13,7 +13,7 @@ class RepoViewController: UITableViewController {
     var repoName: String!
     var owner: String!
     private var branchs = [Branch]()
-    private var tree = [Tree]() {
+    private var trees = [Tree]() {
         didSet {
             DispatchQueue.main.async {
                 self.tableView.reloadData()
@@ -51,8 +51,8 @@ class RepoViewController: UITableViewController {
     private func setupTreeModel() {
         authService.treeInfo(owner: owner, nameTree: selectedBranch, nameRepo: repoName) { (result) in
             switch result {
-            case.success(let tree):
-                self.tree = tree
+            case.success(let trees):
+                self.trees = trees
             case.failure(let error):
                 DispatchQueue.main.async {
                     self.showAlert(message: error.rawValue)
@@ -76,14 +76,31 @@ class RepoViewController: UITableViewController {
     // MARK: - Table view data source
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return tree.count
+        return trees.count
     }
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RepoCell", for: indexPath)
-        cell.textLabel?.text = tree[indexPath.row].path
+        cell.textLabel?.text = trees[indexPath.row].path
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let tree = trees[indexPath.row]
+        if tree.type == "tree" {
+            guard let url = tree.url else { return }
+            authService.treeInfoInTree(url: url) { (result) in
+                switch result {
+                case.success(let trees):
+                    self.trees = trees
+                case.failure(let error):
+                    DispatchQueue.main.async {
+                        self.showAlert(message: error.rawValue)
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -98,7 +115,7 @@ extension RepoViewController: UIPopoverPresentationControllerDelegate, PopOverVi
     
     //MARK: - PopOverViewControllerDelegate
     
-   func changeBranch(name: String) {
+    func changeBranch(name: String) {
         selectedBranch = name
         setupTreeModel()
     }
