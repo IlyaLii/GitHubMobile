@@ -94,7 +94,7 @@ class RepoViewController: UITableViewController {
                 setupTreeModel()
                 folderURL.removeAll()
                 return
-            } else {
+            } else if folderURL.count > 1 {
                 folderURL.removeLast()
             }
             guard let url = folderURL.last else { return }
@@ -112,6 +112,7 @@ class RepoViewController: UITableViewController {
                 }
             }
         }
+        
         if tree.type == "tree" {
             guard let url = tree.url else { return }
             authService.treeInfoInTree(url: url) { (result) in

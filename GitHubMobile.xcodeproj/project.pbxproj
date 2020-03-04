@@ -25,6 +25,7 @@
 		D82B8514240EDAF0002EE54F /* PopOverViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82B8513240EDAF0002EE54F /* PopOverViewControllerDelegate.swift */; };
 		D82B8516240EFE83002EE54F /* Tree.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82B8515240EFE83002EE54F /* Tree.swift */; };
 		D82B8518240FAEDB002EE54F /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82B8517240FAEDB002EE54F /* InfoViewController.swift */; };
+		D82B851A2410470D002EE54F /* daniel-58TJ5U21byY-unsplash.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D82B85192410470D002EE54F /* daniel-58TJ5U21byY-unsplash.jpg */; };
 		D86516C9240A860900C7C77C /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86516C8240A860900C7C77C /* AuthService.swift */; };
 		D8CC931B240BB47600BBEE5C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CC931A240BB47600BBEE5C /* User.swift */; };
 		D8CC931D240BBC5300BBEE5C /* NetworkingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CC931C240BBC5300BBEE5C /* NetworkingError.swift */; };
@@ -53,6 +54,7 @@
 		D82B8513240EDAF0002EE54F /* PopOverViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopOverViewControllerDelegate.swift; sourceTree = "<group>"; };
 		D82B8515240EFE83002EE54F /* Tree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tree.swift; sourceTree = "<group>"; };
 		D82B8517240FAEDB002EE54F /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		D82B85192410470D002EE54F /* daniel-58TJ5U21byY-unsplash.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "daniel-58TJ5U21byY-unsplash.jpg"; sourceTree = "<group>"; };
 		D86516C8240A860900C7C77C /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		D8CC931A240BB47600BBEE5C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D8CC931C240BBC5300BBEE5C /* NetworkingError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingError.swift; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 				D81EC0F7240A688100F87E0C /* SceneDelegate.swift */,
 				D81EC0FB240A688100F87E0C /* Main.storyboard */,
 				D81EC10B240A691700F87E0C /* LoginViewController.swift */,
+				D82B85192410470D002EE54F /* daniel-58TJ5U21byY-unsplash.jpg */,
 				D823600A240E74FE00D3DF57 /* Extensions */,
 				D8235FFA240D7A9000D3DF57 /* MainPage */,
 				D8236005240E3A8C00D3DF57 /* RepoPage */,
@@ -219,6 +222,7 @@
 				D81EC102240A688300F87E0C /* LaunchScreen.storyboard in Resources */,
 				D81EC0FF240A688300F87E0C /* Assets.xcassets in Resources */,
 				D81EC0FD240A688100F87E0C /* Main.storyboard in Resources */,
+				D82B851A2410470D002EE54F /* daniel-58TJ5U21byY-unsplash.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
