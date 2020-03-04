@@ -20,6 +20,7 @@ class RepoViewController: UITableViewController {
             }
         }
     }
+    private var folderURL = [String]()
     private var selectedBranch = "master"
     private var authService: AuthService!
     
@@ -88,12 +89,39 @@ class RepoViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let tree = trees[indexPath.row]
+        if tree.path == "···" {
+            if folderURL.count == 1 {
+                setupTreeModel()
+                folderURL.removeAll()
+                return
+            } else {
+                folderURL.removeLast()
+            }
+            guard let url = folderURL.last else { return }
+            authService.backInfoInTree(url: url) { (result) in
+                switch result {
+                case.success(let trees):
+                    self.trees = trees
+                    if self.trees.first?.path != "···" {
+                        self.trees.insert(Tree(path: "···", url: nil, type: ""), at: 0)
+                    }
+                case.failure(let error):
+                    DispatchQueue.main.async {
+                        self.showAlert(message: error.rawValue)
+                    }
+                }
+            }
+        }
         if tree.type == "tree" {
             guard let url = tree.url else { return }
             authService.treeInfoInTree(url: url) { (result) in
                 switch result {
                 case.success(let trees):
                     self.trees = trees
+                    if self.trees.first?.path != "···" {
+                        self.trees.insert(Tree(path: "···", url: nil, type: ""), at: 0)
+                    }
+                    self.folderURL.append(url)
                 case.failure(let error):
                     DispatchQueue.main.async {
                         self.showAlert(message: error.rawValue)
