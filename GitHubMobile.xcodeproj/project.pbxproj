@@ -24,6 +24,7 @@
 		D82B8512240E822C002EE54F /* PopOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82B8511240E822C002EE54F /* PopOverViewController.swift */; };
 		D82B8514240EDAF0002EE54F /* PopOverViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82B8513240EDAF0002EE54F /* PopOverViewControllerDelegate.swift */; };
 		D82B8516240EFE83002EE54F /* Tree.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82B8515240EFE83002EE54F /* Tree.swift */; };
+		D82B8518240FAEDB002EE54F /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82B8517240FAEDB002EE54F /* InfoViewController.swift */; };
 		D86516C9240A860900C7C77C /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86516C8240A860900C7C77C /* AuthService.swift */; };
 		D8CC931B240BB47600BBEE5C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CC931A240BB47600BBEE5C /* User.swift */; };
 		D8CC931D240BBC5300BBEE5C /* NetworkingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CC931C240BBC5300BBEE5C /* NetworkingError.swift */; };
@@ -51,6 +52,7 @@
 		D82B8511240E822C002EE54F /* PopOverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopOverViewController.swift; sourceTree = "<group>"; };
 		D82B8513240EDAF0002EE54F /* PopOverViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopOverViewControllerDelegate.swift; sourceTree = "<group>"; };
 		D82B8515240EFE83002EE54F /* Tree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tree.swift; sourceTree = "<group>"; };
+		D82B8517240FAEDB002EE54F /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		D86516C8240A860900C7C77C /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		D8CC931A240BB47600BBEE5C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D8CC931C240BBC5300BBEE5C /* NetworkingError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingError.swift; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				D81EC109240A68E700F87E0C /* MainViewController.swift */,
+				D82B8517240FAEDB002EE54F /* InfoViewController.swift */,
 				D8CC931E240BE32500BBEE5C /* ProfileCell.swift */,
 				D8235FFB240DA9E600D3DF57 /* ReposCell.swift */,
 			);
@@ -240,6 +243,7 @@
 				D82B8512240E822C002EE54F /* PopOverViewController.swift in Sources */,
 				D81EC0F6240A688100F87E0C /* AppDelegate.swift in Sources */,
 				D8CC931F240BE32500BBEE5C /* ProfileCell.swift in Sources */,
+				D82B8518240FAEDB002EE54F /* InfoViewController.swift in Sources */,
 				D81EC0F8240A688100F87E0C /* SceneDelegate.swift in Sources */,
 				D8236007240E486D00D3DF57 /* String.swift in Sources */,
 				D8CC931D240BBC5300BBEE5C /* NetworkingError.swift in Sources */,

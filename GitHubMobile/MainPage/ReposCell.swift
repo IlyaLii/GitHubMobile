@@ -10,8 +10,8 @@ import UIKit
 
 class ReposCell: UITableViewCell {
 
+    @IBOutlet weak var infoButton: UIButton!
     @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var privacyLabel: UILabel!
     @IBOutlet weak var updateLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -86,9 +86,26 @@ class MainViewController: UIViewController {
             self.avatarImage = result
         }
     }
+    
+    @objc private func showInfo(sender: UIButton) {
+        let repo = repos[sender.tag]
+        let text = "\(repo.private ? "Private" : "Public")\(repo.fork ? ", Forked" : "")"
+        let vc = InfoViewController()
+        vc.text = text
+        vc.modalPresentationStyle = .popover
+        vc.preferredContentSize = CGSize(width: 10 * text.count, height: 22)
+        guard let ppc = vc.popoverPresentationController else { return }
+        ppc.delegate = self
+        ppc.sourceView = sender
+        ppc.backgroundColor = .white
+       
+        present(vc, animated: true, completion: nil)
+    }
 }
 
-extension MainViewController: UITableViewDelegate, UITableViewDataSource {
+extension MainViewController: UITableViewDelegate, UITableViewDataSource, UIPopoverPresentationControllerDelegate {
+    
+    //MARK: - TableView
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileCell", for: indexPath) as! ProfileCell
@@ -101,7 +118,8 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! ReposCell
             let repo = repos[indexPath.row]
             cell.nameLabel.text = repo.name
-            cell.privacyLabel.text = "\(repo.private ? "Private" : "Public")\(repo.fork ? ", Forked" : "")"
+            cell.infoButton.addTarget(self, action: #selector(showInfo(sender:)), for: .touchUpInside)
+            cell.infoButton.tag = indexPath.row
             cell.updateLabel.text = "Last Update: \(repo.updated_at.convertData())"
             return cell
         }
@@ -136,5 +154,10 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
             vc.owner = userInfo.login
             navigationController?.pushViewController(vc, animated: true)
         }
+    }
+    
+    //MARK: - PopoverVC
+    func adaptivePresentationStyle(for controller: UIPresentationController, traitCollection: UITraitCollection) -> UIModalPresentationStyle {
+        return .none
     }
 }
