@@ -21,6 +21,7 @@ class WebViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        wkWebView.contentMode = .scaleAspectFill
         loadData()
     }
     
@@ -30,7 +31,7 @@ class WebViewController: UIViewController {
         
         wkWebView.load(data,
                        mimeType: NetworkManager.mimeTypeForPath(pathExtension: pathExtension),
-                       characterEncodingName: "base64",
+                       characterEncodingName: "UTF-8",
                        baseURL: NSURL() as URL)
     }
 }

@@ -42,6 +42,6 @@ class NetworkManager {
                 return mimetype as String
             }
         }
-        return "application/octet-stream"
+        return "text/plain"
     }
 }
