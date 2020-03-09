@@ -132,20 +132,13 @@ class RepoViewController: UITableViewController {
         }
         
         if tree.type == "blob" {
-            if tree.path.contains(".png") || tree.path.contains(".jpg") || tree.path.contains(".svg") {
-                guard let url = tree.url else { return }
-                NetworkManager.downloadBase64Image(url: url) { (image) in
-                    DispatchQueue.main.async {
-                        let vc = UIViewController()
-                        let imageView = UIImageView()
-                        vc.view.backgroundColor = .lightGray
-                       
-                        imageView.frame = CGRect(origin: .zero, size: CGSize(width: 256, height: 256))
-                         imageView.center = vc.view.center
-                        imageView.image = image
-                        vc.view.addSubview(imageView)
-                        self.navigationController?.pushViewController(vc, animated: true)
-                    }
+            guard let url = tree.url else { return }
+            NetworkManager.getData(url: url) { data in
+                DispatchQueue.main.async {
+                    let vc = WebViewController()
+                    vc.data = data
+                    vc.pathExtension = tree.path.pathExtension()
+                    self.navigationController?.pushViewController(vc, animated: true)
                 }
             }
         }

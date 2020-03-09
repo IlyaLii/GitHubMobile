@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MobileCoreServices
 
 class NetworkManager {
     
@@ -23,7 +24,7 @@ class NetworkManager {
         }.resume()
     }
     
-    static func downloadBase64Image(url: String, completionHandler: @escaping(UIImage) -> Void) {
+    static func getData(url: String, completionHandler: @escaping(Data) -> Void) {
         guard let url = URL(string: url) else { return }
         let sesion = URLSession.shared
         
@@ -31,8 +32,16 @@ class NetworkManager {
             guard let data = data else { return }
             guard let json = try? JSONDecoder().decode(Blob.self, from: data) else { return }
             guard let dataDecode = Data(base64Encoded: json.content, options: .ignoreUnknownCharacters) else { return }
-            guard let image = UIImage(data: dataDecode) else { return }
-            completionHandler(image)
+            completionHandler(dataDecode)
         }.resume()
+    }
+    
+    static func mimeTypeForPath(pathExtension: String) -> String {
+        if let uti = UTTypeCreatePreferredIdentifierForTag(kUTTagClassFilenameExtension, pathExtension as NSString, nil)?.takeRetainedValue() {
+            if let mimetype = UTTypeCopyPreferredTagWithClass(uti, kUTTagClassMIMEType)?.takeRetainedValue() {
+                return mimetype as String
+            }
+        }
+        return "application/octet-stream"
     }
 }

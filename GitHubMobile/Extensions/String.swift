@@ -18,4 +18,9 @@ extension String {
         newFormatter.dateFormat = "d MMMM, yyyy"
         return newFormatter.string(from: date)
     }
+    
+    func pathExtension() -> String {
+        let temp = self as NSString
+        return temp.pathExtension
+    }
 }
