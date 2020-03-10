@@ -21,7 +21,7 @@ class WebViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        wkWebView.contentMode = .scaleAspectFill
+        wkWebView.contentMode = .center
         loadData()
     }
     

@@ -302,7 +302,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "109"
             endingLineNumber = "109"
-            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkName = "showInfo(sender:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -524,7 +524,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "94"
             endingLineNumber = "94"
-            landmarkName = "showInfo(sender:)"
+            landmarkName = "addRepo(sender:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -77,6 +77,8 @@ class MainViewController: UIViewController {
     }
     private func setupUI() {
         let button = UIBarButtonItem(title: "", style: .done, target: nil, action: nil)
+        let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addRepo(sender:)))
+        navigationItem.rightBarButtonItem = addButton
         navigationItem.leftBarButtonItem = button
         title = "Profile"
     }
@@ -85,6 +87,11 @@ class MainViewController: UIViewController {
         NetworkManager.downloadImage(url: userInfo.avatar_url) { (result) in
             self.avatarImage = result
         }
+    }
+    
+    @objc private func addRepo(sender: UIBarButtonItem!) {
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CreateRepoVC")
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     @objc private func showInfo(sender: UIButton) {
