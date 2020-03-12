@@ -522,8 +522,8 @@
             filePath = "GitHubMobile/RepoPage/RepoViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "94"
-            endingLineNumber = "94"
+            startingLineNumber = "105"
+            endingLineNumber = "105"
             landmarkName = "tableView(_:numberOfRowsInSection:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -594,7 +594,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "D23C4A39-DADE-4D81-9B01-9CFA25982D85"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GitHubMobile/MainPage/MainViewController.swift"
@@ -604,6 +604,102 @@
             endingLineNumber = "40"
             landmarkName = "repos"
             landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C3FF4872-7EB4-482D-8FDC-76E091D01E91"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GitHubMobile/RepoPage/RepoViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "branchs"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "C3FF4872-7EB4-482D-8FDC-76E091D01E91 - 8f46497f8fb65188"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GitHubMobile.RepoViewController.(branchs in _4A1895A9E850673156FC2E3E2C43A419).didset : Swift.Array&lt;GitHubMobile.Branch&gt;"
+                  moduleName = "GitHubMobile"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/chiki-briki/Documents/GitHubMobile/GitHubMobile/RepoPage/RepoViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "254">
+               </Location>
+               <Location
+                  uuid = "C3FF4872-7EB4-482D-8FDC-76E091D01E91 - 7f7ed38264500b1d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in GitHubMobile.RepoViewController.(branchs in _4A1895A9E850673156FC2E3E2C43A419).didset : Swift.Array&lt;GitHubMobile.Branch&gt;"
+                  moduleName = "GitHubMobile"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/chiki-briki/Documents/GitHubMobile/GitHubMobile/RepoPage/RepoViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "87">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A7639463-C928-4EF7-A4B2-4E2C677B3196"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GitHubMobile/RepoPage/RepoViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "trees"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "A7639463-C928-4EF7-A4B2-4E2C677B3196 - 5bc16f8af8c06a20"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GitHubMobile.RepoViewController.(trees in _4A1895A9E850673156FC2E3E2C43A419).didset : Swift.Array&lt;GitHubMobile.Tree&gt;"
+                  moduleName = "GitHubMobile"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/chiki-briki/Documents/GitHubMobile/GitHubMobile/RepoPage/RepoViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "254">
+               </Location>
+               <Location
+                  uuid = "A7639463-C928-4EF7-A4B2-4E2C677B3196 - 6b1ece22a1076097"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in GitHubMobile.RepoViewController.(trees in _4A1895A9E850673156FC2E3E2C43A419).didset : Swift.Array&lt;GitHubMobile.Tree&gt;"
+                  moduleName = "GitHubMobile"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/chiki-briki/Documents/GitHubMobile/GitHubMobile/RepoPage/RepoViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "27"
+                  endingLineNumber = "27"
+                  offsetFromSymbolStart = "87">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

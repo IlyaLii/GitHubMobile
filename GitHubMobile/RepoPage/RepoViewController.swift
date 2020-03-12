@@ -34,13 +34,13 @@ class RepoViewController: UITableViewController {
     private var selectedBranch = "master"
     private var authService: AuthService!
     private var refresher: UIRefreshControl!
+    private var folderFlag: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         authService = AuthService.shared
         refresher = UIRefreshControl()
-        refresher.addTarget(self, action: #selector(setupBranchModel), for: .valueChanged)
-        refresher.addTarget(self, action: #selector(setupTreeModel), for: .valueChanged)
+        refresher.addTarget(self, action: #selector(update), for: .valueChanged)
         tableView.addSubview(refresher)
         setupTreeModel()
         setupBranchModel()
@@ -49,7 +49,16 @@ class RepoViewController: UITableViewController {
         navigationItem.rightBarButtonItem = button
     }
     
-    @objc private func setupBranchModel() {
+    @objc func update() {
+        setupBranchModel()
+        if folderFlag {
+            
+        } else {
+            setupTreeModel()
+        }
+    }
+    
+    private func setupBranchModel() {
         guard let repoName = repoName else { return }
         guard let owner = owner else { return }
         authService.branchsInfo(owner: owner, nameRepo: repoName) { (result) in
@@ -101,12 +110,13 @@ class RepoViewController: UITableViewController {
         cell.textLabel?.text = trees[indexPath.row].path
         return cell
     }
-    
+    #warning("FolderRefresh")
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let tree = trees[indexPath.row]
         if tree.path == "···" {
             if folderURL.count == 1 {
                 setupTreeModel()
+                folderFlag = false
                 folderURL.removeAll()
                 return
             } else if folderURL.count > 1 {
@@ -136,6 +146,7 @@ class RepoViewController: UITableViewController {
                     self.trees = trees
                     if self.trees.first?.path != "···" {
                         self.trees.insert(Tree(path: "···", url: nil, type: ""), at: 0)
+                        self.folderFlag = true
                     }
                     self.folderURL.append(url)
                 case.failure(let error):
@@ -153,6 +164,7 @@ class RepoViewController: UITableViewController {
                     let vc = WebViewController()
                     vc.data = data
                     vc.pathExtension = tree.path.pathExtension()
+                    vc.title = tree.path
                     self.navigationController?.pushViewController(vc, animated: true)
                 }
             }
