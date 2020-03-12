@@ -12,21 +12,34 @@ class RepoViewController: UITableViewController {
     
     var repoName: String!
     var owner: String!
-    private var branchs = [Branch]()
+    private var branchs = [Branch]() {
+        didSet {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
+                self.tableView.reloadData()
+                self.refresher.endRefreshing()
+            })
+        }
+    }
     private var trees = [Tree]() {
         didSet {
-            DispatchQueue.main.async {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
                 self.tableView.reloadData()
-            }
+                self.refresher.endRefreshing()
+            })
         }
     }
     private var folderURL = [String]()
     private var selectedBranch = "master"
     private var authService: AuthService!
+    private var refresher: UIRefreshControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         authService = AuthService.shared
+        refresher = UIRefreshControl()
+        refresher.addTarget(self, action: #selector(setupBranchModel), for: .valueChanged)
+        refresher.addTarget(self, action: #selector(setupTreeModel), for: .valueChanged)
+        tableView.addSubview(refresher)
         setupTreeModel()
         setupBranchModel()
         title = repoName
@@ -34,7 +47,7 @@ class RepoViewController: UITableViewController {
         navigationItem.rightBarButtonItem = button
     }
     
-    private func setupBranchModel() {
+    @objc private func setupBranchModel() {
         guard let repoName = repoName else { return }
         guard let owner = owner else { return }
         authService.branchsInfo(owner: owner, nameRepo: repoName) { (result) in
@@ -49,7 +62,7 @@ class RepoViewController: UITableViewController {
         }
     }
     
-    private func setupTreeModel() {
+    @objc private func setupTreeModel() {
         authService.treeInfo(owner: owner, nameTree: selectedBranch, nameRepo: repoName) { (result) in
             switch result {
             case.success(let trees):

@@ -11,6 +11,7 @@ import UIKit
 class MainViewController: UIViewController {
     
     private var authService: AuthService!
+    private var refresher: UIRefreshControl!
     
     var userInfo: User! {
         didSet {
@@ -24,19 +25,21 @@ class MainViewController: UIViewController {
     
     private var avatarImage: UIImage? {
         didSet {
-            DispatchQueue.main.async {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
                 guard let tableView = self.tableView else { return }
                 tableView.reloadData()
-            }
+                self.refresher.endRefreshing()
+            })
         }
     }
     
     private var repos = [Repos]() {
         didSet {
-            DispatchQueue.main.async {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
                 guard let tableView = self.tableView else { return }
                 tableView.reloadData()
-            }
+                self.refresher.endRefreshing()
+            })
         }
     }
     
@@ -48,7 +51,7 @@ class MainViewController: UIViewController {
         setupUI()
     }
     
-    private func setupModels() {
+    @objc private func setupModels() {
         authService = AuthService.shared
         if userInfo == nil {
             authService.userInfo { (result) in
@@ -76,6 +79,9 @@ class MainViewController: UIViewController {
         }
     }
     private func setupUI() {
+        refresher = UIRefreshControl()
+        tableView.addSubview(refresher)
+        refresher.addTarget(self, action: #selector(setupModels), for: .valueChanged)
         let button = UIBarButtonItem(title: "", style: .done, target: nil, action: nil)
         let settings = UIBarButtonItem(image: UIImage(systemName: "gear"), style: .plain, target: self, action: #selector(openSettings(sender:)))
         navigationItem.leftBarButtonItem = button
