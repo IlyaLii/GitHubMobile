@@ -77,9 +77,9 @@ class MainViewController: UIViewController {
     }
     private func setupUI() {
         let button = UIBarButtonItem(title: "", style: .done, target: nil, action: nil)
-        let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addRepo(sender:)))
-        navigationItem.rightBarButtonItem = addButton
+        let settings = UIBarButtonItem(image: UIImage(systemName: "gear"), style: .plain, target: self, action: #selector(openSettings(sender:)))
         navigationItem.leftBarButtonItem = button
+        navigationItem.rightBarButtonItem = settings
         title = "Profile"
     }
     
@@ -89,9 +89,9 @@ class MainViewController: UIViewController {
         }
     }
     
-    @objc private func addRepo(sender: UIBarButtonItem!) {
-        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CreateRepoVC")
-        navigationController?.pushViewController(vc, animated: true)
+    @objc private func openSettings(sender: UIBarButtonItem!) {
+        let settingsVC = SettingsViewController()
+        navigationController?.pushViewController(settingsVC, animated: true)
     }
     
     @objc private func showInfo(sender: UIButton) {
