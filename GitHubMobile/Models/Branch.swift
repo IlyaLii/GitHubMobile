@@ -8,6 +8,6 @@
 
 import Foundation
 
-struct Branch: Decodable {
+struct Branch: Decodable, Equatable {
     var name: String
 }

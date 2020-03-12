@@ -15,16 +15,18 @@ class RepoViewController: UITableViewController {
     private var branchs = [Branch]() {
         didSet {
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
-                self.tableView.reloadData()
                 self.refresher.endRefreshing()
+                guard oldValue != self.branchs else { return }
+                self.tableView.reloadData()
             })
         }
     }
     private var trees = [Tree]() {
         didSet {
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
-                self.tableView.reloadData()
                 self.refresher.endRefreshing()
+                guard oldValue != self.trees else { return }
+                self.tableView.reloadData()
             })
         }
     }

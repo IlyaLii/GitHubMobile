@@ -8,6 +8,6 @@
 
 import Foundation
 
-struct Blob: Decodable {
+struct Blob: Decodable, Equatable {
     var content: String
 }

@@ -26,9 +26,9 @@ class MainViewController: UIViewController {
     private var avatarImage: UIImage? {
         didSet {
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
-                guard let tableView = self.tableView else { return }
-                tableView.reloadData()
                 self.refresher.endRefreshing()
+                guard let tableView = self.tableView, oldValue != self.avatarImage else { return }
+                tableView.reloadData()
             })
         }
     }
@@ -36,9 +36,10 @@ class MainViewController: UIViewController {
     private var repos = [Repos]() {
         didSet {
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
-                guard let tableView = self.tableView else { return }
-                tableView.reloadData()
                 self.refresher.endRefreshing()
+                guard let tableView = self.tableView, oldValue != self.repos else { return }
+                tableView.reloadData()
+               
             })
         }
     }
@@ -111,7 +112,7 @@ class MainViewController: UIViewController {
         ppc.delegate = self
         ppc.sourceView = sender
         ppc.backgroundColor = .white
-       
+        
         present(vc, animated: true, completion: nil)
     }
 }

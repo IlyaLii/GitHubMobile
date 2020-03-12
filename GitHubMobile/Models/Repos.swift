@@ -8,9 +8,11 @@
 
 import Foundation
 
-struct Repos: Decodable {
+struct Repos: Decodable, Equatable {
+
     var name: String
     var `private`: Bool
     var fork: Bool
     var updated_at: String
+        
 }

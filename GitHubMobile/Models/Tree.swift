@@ -12,7 +12,7 @@ struct InfoTree: Decodable {
     var tree: [Tree]
 }
 
-struct Tree: Decodable {
+struct Tree: Decodable, Equatable {
     var path: String
     var url: String?
     var type: String
