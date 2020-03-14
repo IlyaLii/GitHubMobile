@@ -8,6 +8,13 @@
 
 import UIKit
 
+enum SearchType: String, CaseIterable {
+    case repositories = "Repo"
+    case code = "Code"
+    case commits = "Commits"
+    case users = "Users"
+}
+
 class MainViewController: UIViewController {
     
     private var authService: AuthService!
@@ -80,6 +87,15 @@ class MainViewController: UIViewController {
         }
     }
     private func setupUI() {
+        let searchController = UISearchController()
+        searchController.delegate = self
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.scopeButtonTitles = SearchType.allCases.map { $0.rawValue }
+        searchController.searchBar.delegate = self
+
+        definesPresentationContext = true
+        navigationItem.searchController = searchController
         refresher = UIRefreshControl()
         tableView.addSubview(refresher)
         refresher.addTarget(self, action: #selector(setupModels), for: .valueChanged)
@@ -173,5 +189,17 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource, UIPopo
     //MARK: - PopoverVC
     func adaptivePresentationStyle(for controller: UIPresentationController, traitCollection: UITraitCollection) -> UIModalPresentationStyle {
         return .none
+    }
+    
+}
+
+extension MainViewController: UISearchControllerDelegate, UISearchResultsUpdating, UISearchBarDelegate {
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
+        
     }
 }

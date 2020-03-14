@@ -160,6 +160,36 @@ final class AuthService {
             }
         }.resume()
     }
+    
+    func search(type: SearchType, request: String, completionHandler: @escaping(SearchRepo?) -> Void) {
+        guard let url = URL(string: "https://api.github.com/search/\(type.rawValue)?q=\(request)") else { return }
+        var request = URLRequest(url: url)
+        request.setValue("Basic \(loginData!)", forHTTPHeaderField: "Authorization")
+        if type == .commits {
+            request.setValue("application/vnd.github.cloak-preview", forHTTPHeaderField: "Accept")
+        }
+        
+        let session = URLSession.shared
+        session.dataTask(with: request) { (data, response, error) in
+            guard let data = data else { return }
+        
+            do {
+                switch type {
+                case .code: break
+                case .commits: break
+                case .repositories:
+                    let result = try JSONDecoder().decode(SearchRepo.self, from: data)
+                    completionHandler(result)
+                case .users: break
+                }
+                
+            } catch {
+                print("Search Error, \(error.localizedDescription)")
+            }
+        }.resume()
+        
+        
+    }
 }
 
 extension AuthService {
