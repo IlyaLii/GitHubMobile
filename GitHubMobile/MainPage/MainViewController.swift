@@ -32,22 +32,19 @@ class MainViewController: UIViewController {
     
     private var avatarImage: UIImage? {
         didSet {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
-                self.refresher.endRefreshing()
+            DispatchQueue.main.async {
                 guard let tableView = self.tableView, oldValue != self.avatarImage else { return }
                 tableView.reloadData()
-            })
+            }
         }
     }
     
     private var repos = [Repos]() {
         didSet {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
-                self.refresher.endRefreshing()
+            DispatchQueue.main.async {
                 guard let tableView = self.tableView, oldValue != self.repos else { return }
                 tableView.reloadData()
-               
-            })
+            }
         }
     }
     
@@ -96,9 +93,6 @@ class MainViewController: UIViewController {
 
         definesPresentationContext = true
         navigationItem.searchController = searchController
-        refresher = UIRefreshControl()
-        tableView.addSubview(refresher)
-        refresher.addTarget(self, action: #selector(setupModels), for: .valueChanged)
         let button = UIBarButtonItem(title: "", style: .done, target: nil, action: nil)
         let settings = UIBarButtonItem(image: UIImage(systemName: "gear"), style: .plain, target: self, action: #selector(openSettings(sender:)))
         navigationItem.leftBarButtonItem = button
@@ -204,14 +198,14 @@ extension MainViewController: UISearchControllerDelegate, UISearchResultsUpdatin
             switch type {
             case .code :
                 resultController.result = (repo, users , code)
-                resultController.result = type
+                resultController.type = type
             case .commits: break
             case .repositories:
                 resultController.result = (repo, users , code)
-                resultController.result = type
+                resultController.type = type
             case .users:
                 resultController.result = (repo, users , code)
-                resultController.result = type
+                resultController.type = type
             }
         }
     }
