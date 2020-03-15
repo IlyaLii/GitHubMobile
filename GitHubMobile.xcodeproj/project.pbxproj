@@ -32,6 +32,8 @@
 		D8A1E8F724164278003C5BE0 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A1E8F624164278003C5BE0 /* WebViewController.swift */; };
 		D8A8F33F241D5DAC00740B0B /* SearchRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A8F33E241D5DAC00740B0B /* SearchRepo.swift */; };
 		D8A8F341241E32EA00740B0B /* SearchUsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A8F340241E32EA00740B0B /* SearchUsers.swift */; };
+		D8A8F349241E39B000740B0B /* SearchCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A8F348241E39B000740B0B /* SearchCode.swift */; };
+		D8A8F34B241E40F000740B0B /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A8F34A241E40F000740B0B /* SearchViewController.swift */; };
 		D8CC931B240BB47600BBEE5C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CC931A240BB47600BBEE5C /* User.swift */; };
 		D8CC931D240BBC5300BBEE5C /* NetworkingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CC931C240BBC5300BBEE5C /* NetworkingError.swift */; };
 		D8CC931F240BE32500BBEE5C /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CC931E240BE32500BBEE5C /* ProfileCell.swift */; };
@@ -66,6 +68,8 @@
 		D8A1E8F624164278003C5BE0 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		D8A8F33E241D5DAC00740B0B /* SearchRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRepo.swift; sourceTree = "<group>"; };
 		D8A8F340241E32EA00740B0B /* SearchUsers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUsers.swift; sourceTree = "<group>"; };
+		D8A8F348241E39B000740B0B /* SearchCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCode.swift; sourceTree = "<group>"; };
+		D8A8F34A241E40F000740B0B /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		D8CC931A240BB47600BBEE5C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D8CC931C240BBC5300BBEE5C /* NetworkingError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingError.swift; sourceTree = "<group>"; };
 		D8CC931E240BE32500BBEE5C /* ProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
@@ -106,6 +110,7 @@
 				D81EC0F7240A688100F87E0C /* SceneDelegate.swift */,
 				D81EC0FB240A688100F87E0C /* Main.storyboard */,
 				D81EC10B240A691700F87E0C /* LoginViewController.swift */,
+				D8A8F34C241E40FA00740B0B /* Search */,
 				D823600A240E74FE00D3DF57 /* Extensions */,
 				D8235FFA240D7A9000D3DF57 /* MainPage */,
 				D8236005240E3A8C00D3DF57 /* RepoPage */,
@@ -125,6 +130,7 @@
 				D8CC931A240BB47600BBEE5C /* User.swift */,
 				D8A8F33E241D5DAC00740B0B /* SearchRepo.swift */,
 				D8A8F340241E32EA00740B0B /* SearchUsers.swift */,
+				D8A8F348241E39B000740B0B /* SearchCode.swift */,
 				D8235FFD240DAF2900D3DF57 /* Repos.swift */,
 				D8235FFF240E391300D3DF57 /* Branch.swift */,
 				D82B8515240EFE83002EE54F /* Tree.swift */,
@@ -182,6 +188,14 @@
 				D8787CAD241A65E5002A476B /* SettingsCell.swift */,
 			);
 			path = Settings;
+			sourceTree = "<group>";
+		};
+		D8A8F34C241E40FA00740B0B /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				D8A8F34A241E40F000740B0B /* SearchViewController.swift */,
+			);
+			path = Search;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,6 +270,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D82B8514240EDAF0002EE54F /* PopOverViewControllerDelegate.swift in Sources */,
+				D8A8F349241E39B000740B0B /* SearchCode.swift in Sources */,
 				D8A1E8F724164278003C5BE0 /* WebViewController.swift in Sources */,
 				D8235FFE240DAF2900D3DF57 /* Repos.swift in Sources */,
 				D8236000240E391300D3DF57 /* Branch.swift in Sources */,
@@ -276,6 +291,7 @@
 				D82B8518240FAEDB002EE54F /* InfoViewController.swift in Sources */,
 				D81EC0F8240A688100F87E0C /* SceneDelegate.swift in Sources */,
 				D8236007240E486D00D3DF57 /* String.swift in Sources */,
+				D8A8F34B241E40F000740B0B /* SearchViewController.swift in Sources */,
 				D8CC931D240BBC5300BBEE5C /* NetworkingError.swift in Sources */,
 				D8A8F341241E32EA00740B0B /* SearchUsers.swift in Sources */,
 				D8A8F33F241D5DAC00740B0B /* SearchRepo.swift in Sources */,

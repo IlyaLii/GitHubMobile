@@ -9,10 +9,10 @@
 import UIKit
 
 enum SearchType: String, CaseIterable {
-    case repositories = "Repo"
-    case code = "Code"
-    case commits = "Commits"
-    case users = "Users"
+    case repositories = "repositories"
+    case code = "code"
+    case commits = "commits"
+    case users = "users"
 }
 
 class MainViewController: UIViewController {
@@ -87,7 +87,7 @@ class MainViewController: UIViewController {
         }
     }
     private func setupUI() {
-        let searchController = UISearchController(searchResultsController: UITableViewController())
+        let searchController = UISearchController(searchResultsController: SearchViewController())
         searchController.delegate = self
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
@@ -197,14 +197,21 @@ extension MainViewController: UISearchControllerDelegate, UISearchResultsUpdatin
     
     func updateSearchResults(for searchController: UISearchController) {
         let searchBar = searchController.searchBar
+        guard let resultController = searchController.searchResultsController as? SearchViewController else { return }
         let searchType = SearchType(rawValue: searchBar.scopeButtonTitles![searchBar.selectedScopeButtonIndex])
         guard let type = searchType, let text = searchBar.text else { return }
-        authService.search(type: type, request: text) { (repo, users) in
+        authService.search(type: type, request: text) { (repo, users, code) in
             switch type {
-            case .code : break
+            case .code :
+                resultController.result = (repo, users , code)
+                resultController.result = type
             case .commits: break
-            case .repositories: break
-            case .users: break
+            case .repositories:
+                resultController.result = (repo, users , code)
+                resultController.result = type
+            case .users:
+                resultController.result = (repo, users , code)
+                resultController.result = type
             }
         }
     }

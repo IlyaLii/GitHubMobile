@@ -160,7 +160,8 @@ final class AuthService {
         }.resume()
     }
     
-    func search(type: SearchType, request: String, completionHandler: @escaping(SearchRepo?, SearchUsers?) -> Void) {
+    func search(type: SearchType, request: String, completionHandler: @escaping(SearchRepo?, SearchUsers?, SearchCode?) -> Void) {
+        print("https://api.github.com/search/\(type.rawValue)?q=\(request)")
         guard let url = URL(string: "https://api.github.com/search/\(type.rawValue)?q=\(request)") else { return }
         var request = URLRequest(url: url)
         request.setValue("Basic \(loginData!)", forHTTPHeaderField: "Authorization")
@@ -174,14 +175,16 @@ final class AuthService {
         
             do {
                 switch type {
-                case .code: break
+                case .code:
+                    let result = try JSONDecoder().decode(SearchCode.self, from: data)
+                    completionHandler(nil, nil, result)
                 case .commits: break
                 case .repositories:
                     let result = try JSONDecoder().decode(SearchRepo.self, from: data)
-                    completionHandler(result, nil)
+                    completionHandler(result, nil, nil)
                 case .users:
                     let result = try JSONDecoder().decode(SearchUsers.self, from: data)
-                    completionHandler(nil, result)
+                    completionHandler(nil, result, nil)
                 }
                 
             } catch {
