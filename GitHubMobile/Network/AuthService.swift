@@ -23,7 +23,7 @@ final class AuthService {
         self.loginData = loginData
     }
     
-    init() {
+    private init() {
         guard let loginData = AuthService.getProfile() else { return }
         self.loginData = loginData
     }
@@ -45,7 +45,6 @@ final class AuthService {
                 let user = try JSONDecoder().decode(User.self, from: data)
                 completionHandler(.success(user))
             } catch {
-                //print(error)
                 completionHandler(.failure(.wrongData))
             }
         }.resume()
@@ -161,7 +160,7 @@ final class AuthService {
         }.resume()
     }
     
-    func search(type: SearchType, request: String, completionHandler: @escaping(SearchRepo?) -> Void) {
+    func search(type: SearchType, request: String, completionHandler: @escaping(SearchRepo?, SearchUsers?) -> Void) {
         guard let url = URL(string: "https://api.github.com/search/\(type.rawValue)?q=\(request)") else { return }
         var request = URLRequest(url: url)
         request.setValue("Basic \(loginData!)", forHTTPHeaderField: "Authorization")
@@ -179,8 +178,10 @@ final class AuthService {
                 case .commits: break
                 case .repositories:
                     let result = try JSONDecoder().decode(SearchRepo.self, from: data)
-                    completionHandler(result)
-                case .users: break
+                    completionHandler(result, nil)
+                case .users:
+                    let result = try JSONDecoder().decode(SearchUsers.self, from: data)
+                    completionHandler(nil, result)
                 }
                 
             } catch {

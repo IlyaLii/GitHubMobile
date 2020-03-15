@@ -113,7 +113,8 @@ class RepoViewController: UITableViewController {
     #warning("FolderRefresh")
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let tree = trees[indexPath.row]
-        if tree.path == "···" {
+        let folderString = "..."
+        if tree.path == folderString {
             if folderURL.count == 1 {
                 setupTreeModel()
                 folderFlag = false
@@ -127,8 +128,8 @@ class RepoViewController: UITableViewController {
                 switch result {
                 case.success(let trees):
                     self.trees = trees
-                    if self.trees.first?.path != "···" {
-                        self.trees.insert(Tree(path: "···", url: nil, type: ""), at: 0)
+                    if self.trees.first?.path != folderString {
+                        self.trees.insert(Tree(path: folderString, url: nil, type: ""), at: 0)
                     }
                 case.failure(let error):
                     DispatchQueue.main.async {
@@ -144,8 +145,8 @@ class RepoViewController: UITableViewController {
                 switch result {
                 case.success(let trees):
                     self.trees = trees
-                    if self.trees.first?.path != "···" {
-                        self.trees.insert(Tree(path: "···", url: nil, type: ""), at: 0)
+                    if self.trees.first?.path != folderString {
+                        self.trees.insert(Tree(path: folderString, url: nil, type: ""), at: 0)
                         self.folderFlag = true
                     }
                     self.folderURL.append(url)

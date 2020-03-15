@@ -87,7 +87,7 @@ class MainViewController: UIViewController {
         }
     }
     private func setupUI() {
-        let searchController = UISearchController()
+        let searchController = UISearchController(searchResultsController: UITableViewController())
         searchController.delegate = self
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
@@ -196,7 +196,17 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource, UIPopo
 extension MainViewController: UISearchControllerDelegate, UISearchResultsUpdating, UISearchBarDelegate {
     
     func updateSearchResults(for searchController: UISearchController) {
-        
+        let searchBar = searchController.searchBar
+        let searchType = SearchType(rawValue: searchBar.scopeButtonTitles![searchBar.selectedScopeButtonIndex])
+        guard let type = searchType, let text = searchBar.text else { return }
+        authService.search(type: type, request: text) { (repo, users) in
+            switch type {
+            case .code : break
+            case .commits: break
+            case .repositories: break
+            case .users: break
+            }
+        }
     }
     
     func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {

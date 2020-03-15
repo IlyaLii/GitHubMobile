@@ -31,6 +31,7 @@
 		D8787CAE241A65E5002A476B /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8787CAD241A65E5002A476B /* SettingsCell.swift */; };
 		D8A1E8F724164278003C5BE0 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A1E8F624164278003C5BE0 /* WebViewController.swift */; };
 		D8A8F33F241D5DAC00740B0B /* SearchRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A8F33E241D5DAC00740B0B /* SearchRepo.swift */; };
+		D8A8F341241E32EA00740B0B /* SearchUsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A8F340241E32EA00740B0B /* SearchUsers.swift */; };
 		D8CC931B240BB47600BBEE5C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CC931A240BB47600BBEE5C /* User.swift */; };
 		D8CC931D240BBC5300BBEE5C /* NetworkingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CC931C240BBC5300BBEE5C /* NetworkingError.swift */; };
 		D8CC931F240BE32500BBEE5C /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CC931E240BE32500BBEE5C /* ProfileCell.swift */; };
@@ -64,6 +65,7 @@
 		D8787CAD241A65E5002A476B /* SettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
 		D8A1E8F624164278003C5BE0 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		D8A8F33E241D5DAC00740B0B /* SearchRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRepo.swift; sourceTree = "<group>"; };
+		D8A8F340241E32EA00740B0B /* SearchUsers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUsers.swift; sourceTree = "<group>"; };
 		D8CC931A240BB47600BBEE5C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D8CC931C240BBC5300BBEE5C /* NetworkingError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingError.swift; sourceTree = "<group>"; };
 		D8CC931E240BE32500BBEE5C /* ProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 			children = (
 				D8CC931A240BB47600BBEE5C /* User.swift */,
 				D8A8F33E241D5DAC00740B0B /* SearchRepo.swift */,
+				D8A8F340241E32EA00740B0B /* SearchUsers.swift */,
 				D8235FFD240DAF2900D3DF57 /* Repos.swift */,
 				D8235FFF240E391300D3DF57 /* Branch.swift */,
 				D82B8515240EFE83002EE54F /* Tree.swift */,
@@ -274,6 +277,7 @@
 				D81EC0F8240A688100F87E0C /* SceneDelegate.swift in Sources */,
 				D8236007240E486D00D3DF57 /* String.swift in Sources */,
 				D8CC931D240BBC5300BBEE5C /* NetworkingError.swift in Sources */,
+				D8A8F341241E32EA00740B0B /* SearchUsers.swift in Sources */,
 				D8A8F33F241D5DAC00740B0B /* SearchRepo.swift in Sources */,
 				D8236009240E74D400D3DF57 /* UIViewController.swift in Sources */,
 				D8235FFC240DA9E600D3DF57 /* ReposCell.swift in Sources */,
