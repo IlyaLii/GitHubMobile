@@ -28,10 +28,10 @@ class SearchViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch type {
-        case .code: return result.2!.total_count
+        case .code: return result.2!.items.count
         case .commits: return 0
-        case .repositories: return result.0!.total_count
-        case .users: return result.1!.total_count
+        case .repositories: return result.0!.items.count
+        case .users: return result.1!.items.count
         case .none: return 0
         }
     }
@@ -46,8 +46,7 @@ class SearchViewController: UITableViewController {
             case .users: cell.textLabel?.text = result.1?.items[indexPath.row].name
             case .none: return cell
         }
-
-
+        
         return cell
     }
 }
