@@ -10,5 +10,4 @@ import Foundation
 
 struct SearchRepo: Decodable {
     var items: [Repos]
-    var total_count: Int
 }

@@ -74,7 +74,7 @@ class MainViewController: UIViewController {
         authService.reposInfo { (result) in
             switch result {
             case.success(var repos):
-                repos.sort {$0.updated_at > $1.updated_at}
+                repos.sort {$0.updated_at! > $1.updated_at!}
                 self.repos = repos
             case.failure(let error):
                 DispatchQueue.main.async {
@@ -144,7 +144,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource, UIPopo
             cell.nameLabel.text = repo.name
             cell.infoButton.addTarget(self, action: #selector(showInfo(sender:)), for: .touchUpInside)
             cell.infoButton.tag = indexPath.row
-            cell.updateLabel.text = "Last Update: \(repo.updated_at.convertData())"
+            cell.updateLabel.text = "Last Update: \(repo.updated_at!.convertData())"
             return cell
         }
     }

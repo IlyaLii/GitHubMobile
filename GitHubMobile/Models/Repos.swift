@@ -13,5 +13,5 @@ struct Repos: Decodable, Equatable {
     var name: String
     var `private`: Bool
     var fork: Bool
-    var updated_at: String
+    var updated_at: String?
 }

@@ -10,5 +10,4 @@ import Foundation
 
 struct SearchUsers: Decodable {
     var items: [User]
-    var total_count: Int
 }

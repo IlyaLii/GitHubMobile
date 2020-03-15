@@ -27,7 +27,7 @@ final class AuthService {
         guard let loginData = AuthService.getProfile() else { return }
         self.loginData = loginData
     }
-
+    
     //MARK: -MainViewController
     func userInfo(completionHandler: @escaping(Result<User, NetworkingError>) -> Void) {
         
@@ -93,7 +93,7 @@ final class AuthService {
             }
         }.resume()
     }
-        
+    
     func treeInfo(owner: String, nameTree: String, nameRepo: String, completionHandler: @escaping(Result<[Tree], NetworkingError>) -> Void) {
         guard let url = URL(string: "https://api.github.com/repos/\(owner)/\(nameRepo)/git/trees/\(nameTree)") else { return }
         var request = URLRequest(url: url)
@@ -161,9 +161,14 @@ final class AuthService {
     }
     
     func search(type: SearchType, request: String, completionHandler: @escaping(SearchRepo?, SearchUsers?, SearchCode?) -> Void) {
-        print("https://api.github.com/search/\(type.rawValue)?q=\(request)")
-        guard let url = URL(string: "https://api.github.com/search/\(type.rawValue)?q=\(request)") else { return }
-        var request = URLRequest(url: url)
+        var url = URL(string: "https://api.github.com")
+        if type == .code {
+            url = URL(string: "search/\(type.rawValue)?q=\(request)+user:IlyaLii", relativeTo: url)
+        } else {
+            url = URL(string: "search/\(type.rawValue)?q=\(request)", relativeTo: url)
+        }
+        guard let fullUrl = url else { return }
+        var request = URLRequest(url: fullUrl)
         request.setValue("Basic \(loginData!)", forHTTPHeaderField: "Authorization")
         if type == .commits {
             request.setValue("application/vnd.github.cloak-preview", forHTTPHeaderField: "Accept")
@@ -172,7 +177,7 @@ final class AuthService {
         let session = URLSession.shared
         session.dataTask(with: request) { (data, response, error) in
             guard let data = data else { return }
-        
+            
             do {
                 switch type {
                 case .code:

@@ -1,5 +1,5 @@
 //
-//  SearchCode.swift
+//  Code.swift
 //  GitHubMobile
 //
 //  Created by Li on 3/15/20.
@@ -8,6 +8,8 @@
 
 import Foundation
 
-struct SearchCode: Decodable {
-    var items: [Code]
+struct Code: Decodable {
+    var git_url: String
+    var name: String
+    var repository: Repos
 }
