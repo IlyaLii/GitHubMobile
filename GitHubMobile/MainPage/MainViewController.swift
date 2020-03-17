@@ -52,6 +52,7 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.register(ReposCell.self, forCellReuseIdentifier: "Cell")
         setupModels()
         setupUI()
     }
@@ -193,8 +194,9 @@ extension MainViewController: UISearchControllerDelegate, UISearchResultsUpdatin
         let searchBar = searchController.searchBar
         guard let resultController = searchController.searchResultsController as? SearchViewController else { return }
         let searchType = SearchType(rawValue: searchBar.scopeButtonTitles![searchBar.selectedScopeButtonIndex])
-        guard let type = searchType, let text = searchBar.text else { return }
-        authService.search(type: type, request: text) { (repo, users, code) in
+        guard let type = searchType else { return }
+        if searchBar.text!.count < 2 { return }
+        authService.search(type: type, request: searchBar.text!, login: userInfo.login) { (repo, users, code) in
             switch type {
             case .code :
                 resultController.result = (repo, users , code)

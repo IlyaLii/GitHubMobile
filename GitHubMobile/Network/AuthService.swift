@@ -160,10 +160,10 @@ final class AuthService {
         }.resume()
     }
     
-    func search(type: SearchType, request: String, completionHandler: @escaping(SearchRepo?, SearchUsers?, SearchCode?) -> Void) {
+    func search(type: SearchType, request: String, login: String, completionHandler: @escaping(SearchRepo?, SearchUsers?, SearchCode?) -> Void) {
         var url = URL(string: "https://api.github.com")
         if type == .code {
-            url = URL(string: "search/\(type.rawValue)?q=\(request)+user:IlyaLii", relativeTo: url)
+            url = URL(string: "search/\(type.rawValue)?q=\(request)+user:\(login)", relativeTo: url)
         } else {
             url = URL(string: "search/\(type.rawValue)?q=\(request)", relativeTo: url)
         }

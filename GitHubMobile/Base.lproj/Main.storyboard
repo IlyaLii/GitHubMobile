@@ -125,51 +125,8 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="20s-EY-dGR" id="Jyb-Mn-fMk">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ySA-Pb-bEk">
-                                                    <rect key="frame" x="20" y="11" width="341" height="25"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="5se-zX-ZzP"/>
-                                                        <constraint firstAttribute="height" constant="25" id="FYg-xe-wcb"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                    <color key="textColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last Update:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jg0-YW-sSI">
-                                                    <rect key="frame" x="20" y="64" width="386" height="25"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="25" id="CMN-pa-43d"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="detailDisclosure" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ZX-4P-sd4">
-                                                    <rect key="frame" x="371" y="11" width="25" height="24"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="25" id="0Dm-W6-ypF"/>
-                                                        <constraint firstAttribute="height" constant="24" id="8kJ-z0-kdU"/>
-                                                    </constraints>
-                                                </button>
-                                            </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <constraints>
-                                                <constraint firstItem="ySA-Pb-bEk" firstAttribute="top" secondItem="Jyb-Mn-fMk" secondAttribute="top" constant="11" id="58L-jA-zFj"/>
-                                                <constraint firstItem="5ZX-4P-sd4" firstAttribute="top" secondItem="Jyb-Mn-fMk" secondAttribute="top" constant="11" id="G4Y-f6-ubb"/>
-                                                <constraint firstItem="jg0-YW-sSI" firstAttribute="bottom" secondItem="Jyb-Mn-fMk" secondAttribute="bottomMargin" id="GoL-Tq-fe3"/>
-                                                <constraint firstItem="5ZX-4P-sd4" firstAttribute="leading" secondItem="ySA-Pb-bEk" secondAttribute="trailing" constant="10" id="Irz-Gn-FVb"/>
-                                                <constraint firstItem="ySA-Pb-bEk" firstAttribute="leading" secondItem="Jyb-Mn-fMk" secondAttribute="leading" constant="20" id="JtQ-0f-dmP"/>
-                                                <constraint firstAttribute="trailing" secondItem="5ZX-4P-sd4" secondAttribute="trailing" constant="18" id="VIp-mn-IPr"/>
-                                                <constraint firstItem="jg0-YW-sSI" firstAttribute="leading" secondItem="ySA-Pb-bEk" secondAttribute="leading" id="hYQ-XZ-XpZ"/>
-                                                <constraint firstAttribute="trailing" secondItem="jg0-YW-sSI" secondAttribute="trailing" constant="8" id="ukv-IC-kPD"/>
-                                            </constraints>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="infoButton" destination="5ZX-4P-sd4" id="Rcl-nv-coO"/>
-                                            <outlet property="nameLabel" destination="ySA-Pb-bEk" id="ajp-Vh-fUy"/>
-                                            <outlet property="updateLabel" destination="jg0-YW-sSI" id="Ov9-nj-pJb"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>

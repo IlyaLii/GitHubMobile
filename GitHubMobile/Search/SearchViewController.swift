@@ -23,6 +23,7 @@ class SearchViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "reuseIdentifier")
+        tableView.register(ReposCell.self, forCellReuseIdentifier: "ReposCell")
     }
 
 
@@ -44,10 +45,19 @@ class SearchViewController: UITableViewController {
                 cell.textLabel?.text = result.2?.items[indexPath.row].name
                 cell.detailTextLabel?.text = result.2?.items[indexPath.row].repository.name
             case .commits: return cell
-            case .repositories: cell.textLabel?.text = result.0?.items[indexPath.row].name
+            case .repositories: return repoCell(tableView: tableView, indexPath: indexPath)
             case .users: cell.textLabel?.text = result.1?.items[indexPath.row].login
             case .none: return cell
         }
+        
+        return cell
+    }
+    
+    func repoCell(tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ReposCell", for: indexPath) as! ReposCell
+        guard let item = result.0?.items[indexPath.row] else { return cell }
+        cell.updateLabel.text = "Last Update: \(item.updated_at!.convertData())"
+       // cell.nameLabel.text = item.name
         
         return cell
     }
