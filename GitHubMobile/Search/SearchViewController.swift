@@ -63,12 +63,17 @@ class SearchViewController: UITableViewController {
             guard let code = result.2?.items[indexPath.row] else { return }
             tableView.deselectRow(at: indexPath, animated: true)
             let repoName = code.repository.name
-            let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "RepoVC") as! RepoViewController
-            vc.repoName = repoName
-            vc.owner = code.repository.owner.login
-            presentingViewController?.navigationController?.pushViewController(vc, animated: true)
-            
+            NetworkManager.getData(url: code.git_url) { (data) in
+                DispatchQueue.main.async {
+                    let vc = WebViewController()
+                    vc.data = data
+                    vc.pathExtension = code.path.pathExtension()
+                    vc.title = code.path
+                    self.presentingViewController?.navigationController?.pushViewController(vc, animated: true)
+                }
+            }
         default: break
+            
         }
         
     }
