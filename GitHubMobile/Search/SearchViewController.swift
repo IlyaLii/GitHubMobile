@@ -58,9 +58,15 @@ class SearchViewController: UITableViewController {
             let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "RepoVC") as! RepoViewController
             vc.repoName = repoName
             vc.owner = repo.owner.login
-            //navigationController?.pushViewController(vc, animated: true)
+            presentingViewController?.navigationController?.pushViewController(vc, animated: true)
         case .code:
             guard let code = result.2?.items[indexPath.row] else { return }
+            tableView.deselectRow(at: indexPath, animated: true)
+            let repoName = code.repository.name
+            let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "RepoVC") as! RepoViewController
+            vc.repoName = repoName
+            vc.owner = code.repository.owner.login
+            presentingViewController?.navigationController?.pushViewController(vc, animated: true)
             
         default: break
         }

@@ -92,6 +92,7 @@ class MainViewController: UIViewController {
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.scopeButtonTitles = SearchType.allCases.map { $0.rawValue.capitalized }
         searchController.searchBar.delegate = self
+
         definesPresentationContext = true
         navigationItem.searchController = searchController
         let button = UIBarButtonItem(title: "", style: .done, target: nil, action: nil)
