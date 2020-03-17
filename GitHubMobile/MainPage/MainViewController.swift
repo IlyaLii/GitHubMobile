@@ -85,13 +85,13 @@ class MainViewController: UIViewController {
         }
     }
     private func setupUI() {
-        let searchController = UISearchController(searchResultsController: SearchViewController())
+        let vc = SearchViewController()
+        let searchController = UISearchController(searchResultsController: vc)
         searchController.delegate = self
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
-        searchController.searchBar.scopeButtonTitles = SearchType.allCases.map { $0.rawValue }
+        searchController.searchBar.scopeButtonTitles = SearchType.allCases.map { $0.rawValue.capitalized }
         searchController.searchBar.delegate = self
-
         definesPresentationContext = true
         navigationItem.searchController = searchController
         let button = UIBarButtonItem(title: "", style: .done, target: nil, action: nil)
@@ -193,7 +193,7 @@ extension MainViewController: UISearchControllerDelegate, UISearchResultsUpdatin
     func updateSearchResults(for searchController: UISearchController) {
         let searchBar = searchController.searchBar
         guard let resultController = searchController.searchResultsController as? SearchViewController else { return }
-        let searchType = SearchType(rawValue: searchBar.scopeButtonTitles![searchBar.selectedScopeButtonIndex])
+        let searchType = SearchType(rawValue: searchBar.scopeButtonTitles![searchBar.selectedScopeButtonIndex].lowercased())
         guard let type = searchType else { return }
         if searchBar.text!.count < 2 { return }
         authService.search(type: type, request: searchBar.text!, login: userInfo.login) { (repo, users, code) in
@@ -209,10 +209,9 @@ extension MainViewController: UISearchControllerDelegate, UISearchResultsUpdatin
                 resultController.result = (repo, users , code)
                 resultController.type = type
             }
+            DispatchQueue.main.async {
+                resultController.tableView.reloadData()
+            }
         }
-    }
-    
-    func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
-        
     }
 }

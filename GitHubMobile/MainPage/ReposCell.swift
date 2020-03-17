@@ -35,7 +35,7 @@ class ReposCell: UITableViewCell {
         super.layoutSubviews()
         updateLabel.frame = CGRect(x: offset,
                                    y: 64,
-                                   width: contentView.frame.width,
+                                   width: contentView.frame.width - 2 * offset,
                                    height: 25)
         nameLabel.frame = CGRect(x: offset, y: 11, width: contentView.frame.width - 2 * offset - 25, height: 25)
         

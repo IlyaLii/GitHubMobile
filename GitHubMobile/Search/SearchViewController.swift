@@ -10,15 +10,8 @@ import UIKit
 
 class SearchViewController: UITableViewController {
     
-    var result: (SearchRepo?, SearchUsers?, SearchCode?) {
-        didSet {
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
-        }
-    }
-    
-    var type: SearchType!
+    var result: (SearchRepo?, SearchUsers?, SearchCode?)
+    var type: SearchType! 
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,9 +34,7 @@ class SearchViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
         switch type {
-        case .code: break
-            //            cell.textLabel?.text = result.2?.items[indexPath.row].name
-        //            cell.detailTextLabel?.text = result.2?.items[indexPath.row].repository.name
+        case .code: return codeCell(tableView: tableView, indexPath: indexPath)
         case .commits: break
         case .repositories: return repoCell(tableView: tableView, indexPath: indexPath)
         case .users: break
@@ -67,11 +58,10 @@ class SearchViewController: UITableViewController {
             let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "RepoVC") as! RepoViewController
             vc.repoName = repoName
             vc.owner = repo.owner.login
-            let navigationController = UINavigationController(rootViewController: vc)
-            navigationController.modalPresentationStyle = .fullScreen
-            present(navigationController, animated: true, completion: nil)
-//            vc.modalPresentationStyle = .fullScreen
-//            present(vc, animated: true, completion: nil)
+            //navigationController?.pushViewController(vc, animated: true)
+        case .code:
+            guard let code = result.2?.items[indexPath.row] else { return }
+            
         default: break
         }
         
@@ -84,6 +74,15 @@ class SearchViewController: UITableViewController {
         cell.nameLabel.text = "\(item.owner.login)/\(item.name)"
         cell.infoButton.addTarget(self, action: #selector(showInfo(sender:)), for: .touchUpInside)
         cell.infoButton.tag = indexPath.row
+        return cell
+    }
+    
+    func codeCell(tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ReposCell", for: indexPath) as! ReposCell
+        guard let item = result.2?.items[indexPath.row] else { return cell }
+        cell.updateLabel.text = item.path
+        cell.nameLabel.text = item.repository.name
+        cell.infoButton.isHidden = true
         return cell
     }
     
@@ -107,4 +106,5 @@ extension SearchViewController: UIPopoverPresentationControllerDelegate {
     func adaptivePresentationStyle(for controller: UIPresentationController, traitCollection: UITraitCollection) -> UIModalPresentationStyle {
         return .none
     }
+    
 }

@@ -12,4 +12,5 @@ struct Code: Decodable {
     var git_url: String
     var name: String
     var repository: Repos
+    var path: String
 }
