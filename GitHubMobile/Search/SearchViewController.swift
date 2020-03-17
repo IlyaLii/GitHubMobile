@@ -42,8 +42,8 @@ class SearchViewController: UITableViewController {
         let cell = UITableViewCell()
         switch type {
         case .code: break
-//            cell.textLabel?.text = result.2?.items[indexPath.row].name
-//            cell.detailTextLabel?.text = result.2?.items[indexPath.row].repository.name
+            //            cell.textLabel?.text = result.2?.items[indexPath.row].name
+        //            cell.detailTextLabel?.text = result.2?.items[indexPath.row].repository.name
         case .commits: break
         case .repositories: return repoCell(tableView: tableView, indexPath: indexPath)
         case .users: break
@@ -58,11 +58,30 @@ class SearchViewController: UITableViewController {
         return 100
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch type {
+        case .repositories:
+            guard let repo = result.0?.items[indexPath.row] else { return }
+            tableView.deselectRow(at: indexPath, animated: true)
+            let repoName = repo.name
+            let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "RepoVC") as! RepoViewController
+            vc.repoName = repoName
+            vc.owner = repo.owner.login
+            let navigationController = UINavigationController(rootViewController: vc)
+            navigationController.modalPresentationStyle = .fullScreen
+            present(navigationController, animated: true, completion: nil)
+//            vc.modalPresentationStyle = .fullScreen
+//            present(vc, animated: true, completion: nil)
+        default: break
+        }
+        
+    }
+    
     func repoCell(tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ReposCell", for: indexPath) as! ReposCell
         guard let item = result.0?.items[indexPath.row] else { return cell }
         cell.updateLabel.text = "Last Update: \(item.updated_at!.convertData())"
-        cell.nameLabel.text = item.name
+        cell.nameLabel.text = "\(item.owner.login)/\(item.name)"
         cell.infoButton.addTarget(self, action: #selector(showInfo(sender:)), for: .touchUpInside)
         cell.infoButton.tag = indexPath.row
         return cell

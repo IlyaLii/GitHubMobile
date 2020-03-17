@@ -9,7 +9,7 @@
 import Foundation
 
 struct Repos: Decodable, Equatable {
-
+    var owner: Owner
     var name: String
     var `private`: Bool
     var fork: Bool

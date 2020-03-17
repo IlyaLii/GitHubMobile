@@ -37,7 +37,7 @@ class ReposCell: UITableViewCell {
                                    y: 64,
                                    width: contentView.frame.width,
                                    height: 25)
-        nameLabel.frame = CGRect(x: offset, y: 11, width: 200, height: 25)
+        nameLabel.frame = CGRect(x: offset, y: 11, width: contentView.frame.width - 2 * offset - 25, height: 25)
         
         infoButton.frame = CGRect(x: contentView.frame.width - offset - 25, y: 11, width: 25, height: 25)
     }

@@ -42,6 +42,7 @@ class RepoViewController: UITableViewController {
         refresher = UIRefreshControl()
         refresher.addTarget(self, action: #selector(update), for: .valueChanged)
         tableView.addSubview(refresher)
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "RepoCell")
         setupTreeModel()
         setupBranchModel()
         title = repoName
