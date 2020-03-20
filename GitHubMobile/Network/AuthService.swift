@@ -191,7 +191,6 @@ final class AuthService {
                     let result = try JSONDecoder().decode(SearchUsers.self, from: data)
                     completionHandler(nil, result, nil)
                 }
-                
             } catch {
                 print("Search Error, \(error.localizedDescription)")
             }

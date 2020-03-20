@@ -9,5 +9,5 @@
 import Foundation
 
 struct SearchCode: Decodable {
-    var items: [Code]
+    var items: [Code]?
 }

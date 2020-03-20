@@ -9,5 +9,5 @@
 import Foundation
 
 struct SearchRepo: Decodable {
-    var items: [Repos]
+    var items: [Repos]?
 }
