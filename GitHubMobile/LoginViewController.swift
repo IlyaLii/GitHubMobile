@@ -70,7 +70,7 @@ class LoginViewController: UIViewController {
             case .success(let user):
                 self.authService.setProfile()
                 DispatchQueue.main.async {
-                    let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainVC") as! MainViewController
+                    let vc = MainViewController()
                     self.navigationController?.pushViewController(vc, animated: true)
                     vc.userInfo = user
                     self.passwordTF.text = ""

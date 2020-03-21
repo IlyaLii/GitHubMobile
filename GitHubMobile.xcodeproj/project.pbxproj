@@ -29,6 +29,7 @@
 		D86516C9240A860900C7C77C /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86516C8240A860900C7C77C /* AuthService.swift */; };
 		D8787CAB241A1735002A476B /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8787CAA241A1735002A476B /* SettingsViewController.swift */; };
 		D8787CAE241A65E5002A476B /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8787CAD241A65E5002A476B /* SettingsCell.swift */; };
+		D8939107242644FF004FE9A9 /* BaseMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8939106242644FF004FE9A9 /* BaseMainViewController.swift */; };
 		D89CB3FD2420C9AB00CA26DC /* Owner.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89CB3FC2420C9AB00CA26DC /* Owner.swift */; };
 		D8A1E8F724164278003C5BE0 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A1E8F624164278003C5BE0 /* WebViewController.swift */; };
 		D8A8F33F241D5DAC00740B0B /* SearchRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A8F33E241D5DAC00740B0B /* SearchRepo.swift */; };
@@ -67,6 +68,7 @@
 		D86516C8240A860900C7C77C /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		D8787CAA241A1735002A476B /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		D8787CAD241A65E5002A476B /* SettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
+		D8939106242644FF004FE9A9 /* BaseMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseMainViewController.swift; sourceTree = "<group>"; };
 		D89CB3FC2420C9AB00CA26DC /* Owner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Owner.swift; sourceTree = "<group>"; };
 		D8A1E8F624164278003C5BE0 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		D8A8F33E241D5DAC00740B0B /* SearchRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRepo.swift; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				D81EC109240A68E700F87E0C /* MainViewController.swift */,
+				D8939106242644FF004FE9A9 /* BaseMainViewController.swift */,
 				D82B8517240FAEDB002EE54F /* InfoViewController.swift */,
 				D8CC931E240BE32500BBEE5C /* ProfileCell.swift */,
 				D8235FFB240DA9E600D3DF57 /* ReposCell.swift */,
@@ -277,6 +280,7 @@
 			files = (
 				D82B8514240EDAF0002EE54F /* PopOverViewControllerDelegate.swift in Sources */,
 				D8A8F349241E39B000740B0B /* SearchCode.swift in Sources */,
+				D8939107242644FF004FE9A9 /* BaseMainViewController.swift in Sources */,
 				D8A1E8F724164278003C5BE0 /* WebViewController.swift in Sources */,
 				D8235FFE240DAF2900D3DF57 /* Repos.swift in Sources */,
 				D8236000240E391300D3DF57 /* Branch.swift in Sources */,

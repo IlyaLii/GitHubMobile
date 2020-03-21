@@ -72,6 +72,14 @@ class SearchViewController: UITableViewController {
                     self.presentingViewController?.navigationController?.pushViewController(vc, animated: true)
                 }
             }
+        case .users:
+            guard let user = result.1?.items?[indexPath.row] else { return }
+            tableView.deselectRow(at: indexPath, animated: true)
+            let cell = tableView.cellForRow(at: indexPath) as! ProfileCell
+            let vc = BaseMainViewController()
+            vc.userInfo = user
+            vc.avatarImage = cell.profileImage.image
+            self.presentingViewController?.navigationController?.pushViewController(vc, animated: true)
         default: break
         }
     }

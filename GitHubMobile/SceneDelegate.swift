@@ -22,7 +22,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.windowScene = windowScene
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         if UserDefaults.standard.object(forKey: "Profile") != nil {
-            let vc = storyboard.instantiateViewController(withIdentifier: "MainVC") as! MainViewController
+            let vc = MainViewController()
             let navigationVC = UINavigationController(rootViewController: vc)
             window?.rootViewController = navigationVC
         } else {
