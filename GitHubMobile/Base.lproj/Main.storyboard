@@ -58,6 +58,7 @@
                         <outlet property="emailTF" destination="XA1-V2-X7e" id="svg-x2-jZ2"/>
                         <outlet property="loginButton" destination="v5M-mh-g54" id="0Ad-MH-D4j"/>
                         <outlet property="passwordTF" destination="W2F-MV-5Ys" id="ibC-wf-8xW"/>
+                        <outlet property="topConstraint" destination="jYA-eM-UuP" id="KdM-nE-uNp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VSR-bg-Vp4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
