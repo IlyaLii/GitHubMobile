@@ -53,6 +53,7 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.register(ProfileCell.self, forCellReuseIdentifier: "ProfileCell")
         tableView.register(ReposCell.self, forCellReuseIdentifier: "Cell")
         setupModels()
         setupUI()
@@ -94,7 +95,6 @@ class MainViewController: UIViewController {
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.scopeButtonTitles = SearchType.allCases.map { $0.rawValue.capitalized }
         searchController.searchBar.delegate = self
-        //searchController.searchBar
         definesPresentationContext = true
         navigationItem.searchController = searchController
         
@@ -200,7 +200,8 @@ extension MainViewController: UISearchControllerDelegate, UISearchResultsUpdatin
         resultController.setActiviyView()
         let searchType = SearchType(rawValue: searchBar.scopeButtonTitles![searchBar.selectedScopeButtonIndex].lowercased())
         guard let type = searchType else { return }
-        if searchBar.text!.count <= 2 { return }
+        if searchBar.text!.count <= 1 { return }
+        guard let authService = authService else { return }
         authService.search(type: type, request: searchBar.text!, login: userInfo.login) { (repo, users, code) in
             switch type {
             case .code :
@@ -214,7 +215,7 @@ extension MainViewController: UISearchControllerDelegate, UISearchResultsUpdatin
                 resultController.result = (repo, users , code)
                 resultController.type = type
             }
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+            DispatchQueue.main.async {
                 resultController.removeActivityView()
                 resultController.tableView.reloadData()
             }

@@ -111,7 +111,7 @@ class RepoViewController: UITableViewController {
         cell.textLabel?.text = trees[indexPath.row].path
         return cell
     }
-    #warning("FolderRefresh")
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let tree = trees[indexPath.row]
         let folderString = "..."

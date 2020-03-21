@@ -20,6 +20,7 @@ class SearchViewController: UITableViewController {
         super.viewDidLoad()
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "reuseIdentifier")
         tableView.register(ReposCell.self, forCellReuseIdentifier: "ReposCell")
+        tableView.register(ProfileCell.self, forCellReuseIdentifier: "ProfileCell")
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -39,7 +40,7 @@ class SearchViewController: UITableViewController {
         case .code: return codeCell(tableView: tableView, indexPath: indexPath)
         case .commits: break
         case .repositories: return repoCell(tableView: tableView, indexPath: indexPath)
-        case .users: break
+        case .users: return userCell(tableView: tableView, indexPath: indexPath)
         case .none: break
         }
         return cell
@@ -52,7 +53,6 @@ class SearchViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch type {
         case .repositories:
-            guard indexPath.row >= (result.0?.items!.count)!  else { return }
             guard let repo = result.0?.items?[indexPath.row] else { return }
             tableView.deselectRow(at: indexPath, animated: true)
             let repoName = repo.name
@@ -61,7 +61,6 @@ class SearchViewController: UITableViewController {
             vc.owner = repo.owner.login
             presentingViewController?.navigationController?.pushViewController(vc, animated: true)
         case .code:
-            guard indexPath.row >= (result.2?.items!.count)!  else { return }
             guard let code = result.2?.items?[indexPath.row] else { return }
             tableView.deselectRow(at: indexPath, animated: true)
             NetworkManager.getData(url: code.git_url) { (data) in
@@ -79,6 +78,7 @@ class SearchViewController: UITableViewController {
     
     func repoCell(tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ReposCell", for: indexPath) as! ReposCell
+        guard indexPath.row <= (result.0?.items!.count)!  else { return cell }
         guard let item = result.0?.items?[indexPath.row] else { return cell }
         cell.updateLabel.text = "Last Update: \(item.updated_at!.convertData())"
         cell.nameLabel.text = "\(item.owner.login)/\(item.name)"
@@ -89,10 +89,24 @@ class SearchViewController: UITableViewController {
     
     func codeCell(tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ReposCell", for: indexPath) as! ReposCell
+        guard indexPath.row <= (result.2?.items!.count)!  else { return cell }
         guard let item = result.2?.items?[indexPath.row] else { return cell }
         cell.updateLabel.text = item.path
         cell.nameLabel.text = item.repository.name
         cell.infoButton.isHidden = true
+        return cell
+    }
+    
+    func userCell(tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileCell", for: indexPath) as! ProfileCell
+        guard indexPath.row <= (result.1?.items!.count)!  else { return cell }
+        guard let item = result.1?.items?[indexPath.row] else { return cell }
+        NetworkManager.downloadImage(url: item.avatar_url) { (result) in
+            DispatchQueue.main.async {
+                cell.profileImage.image = result
+            }
+        }
+        cell.nameLabel.text = item.login
         return cell
     }
     
@@ -115,7 +129,7 @@ class SearchViewController: UITableViewController {
         spinner.removeFromSuperview()
         loadingView.frame = UIScreen.main.bounds
         loadingView.backgroundColor = .white
-        spinner.center = CGPoint(x: loadingView.center.x, y: loadingView.center.y - (presentingViewController?.navigationController?.navigationBar.frame.maxY ?? 0))
+        spinner.center = CGPoint(x: loadingView.center.x, y: loadingView.center.y - (presentingViewController?.navigationController?.navigationBar.frame.maxY ?? 0 + spinner.frame.height))
         spinner.startAnimating()
         loadingView.addSubview(spinner)
         view.addSubview(loadingView)
