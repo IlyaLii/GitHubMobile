@@ -9,18 +9,18 @@
 import UIKit
 
 class BaseMainViewController: UIViewController {
-
+    
     private var tableView: UITableView!
+    var authService: AuthService!
     var userInfo: User! {
         didSet {
             DispatchQueue.main.async {
                 guard let tableView = self.tableView else { return }
                 tableView.reloadData()
             }
+            
             if avatarImage == nil {
                 self.getImage()
-            } else {
-                self.title = self.userInfo.name
             }
         }
     }
@@ -46,16 +46,33 @@ class BaseMainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        setupModels()
         tableView.register(ProfileCell.self, forCellReuseIdentifier: "ProfileCell")
         tableView.register(ReposCell.self, forCellReuseIdentifier: "Cell")
     }
     
-
+    
     private func setupUI() {
         tableView = UITableView(frame: view.frame)
         tableView.dataSource = self
         tableView.delegate = self
         view.addSubview(tableView)
+    }
+    
+    func setupModels() {
+        authService = AuthService.shared
+        guard let userInfo = userInfo else { return }
+        authService.reposInfo(profile: false, username: userInfo.login) { (result) in
+            switch result {
+            case.success(var repos):
+                repos.sort {$0.updated_at! > $1.updated_at!}
+                self.repos = repos
+            case.failure(let error):
+                DispatchQueue.main.async {
+                    self.showAlert(message: error.rawValue)
+                }
+            }
+        }
     }
     
     @objc private func showInfo(sender: UIButton) {

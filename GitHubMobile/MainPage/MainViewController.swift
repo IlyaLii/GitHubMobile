@@ -16,17 +16,16 @@ enum SearchType: String, CaseIterable {
 }
 
 class MainViewController: BaseMainViewController {
-    
-    private var authService: AuthService!
     private var searchController: UISearchController!
-        
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupModels()
         setupUI()
     }
     
-    @objc private func setupModels() {
+    override func setupModels() {
+        super.setupModels()
         authService = AuthService.shared
         if userInfo == nil {
             authService.userInfo { (result) in
@@ -41,7 +40,7 @@ class MainViewController: BaseMainViewController {
             }
         }
         
-        authService.reposInfo { (result) in
+        authService.reposInfo(profile: true, username: nil) { (result) in
             switch result {
             case.success(var repos):
                 repos.sort {$0.updated_at! > $1.updated_at!}

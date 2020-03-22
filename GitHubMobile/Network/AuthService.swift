@@ -50,8 +50,9 @@ final class AuthService {
         }.resume()
     }
     
-    func reposInfo(completionHandler: @escaping(Result<[Repos], NetworkingError>) -> Void) {
-        guard let url = URL(string: "https://api.github.com/user/repos") else { return }
+    func reposInfo(profile: Bool, username: String?, completionHandler: @escaping(Result<[Repos], NetworkingError>) -> Void) {
+        
+        guard let url = profile ? URL(string: "https://api.github.com/user/repos") : URL(string: "https://api.github.com/users/\(username ?? "")/repos") else { return }
         var request = URLRequest(url: url)
         request.setValue("Basic \(loginData!)", forHTTPHeaderField: "Authorization")
         
