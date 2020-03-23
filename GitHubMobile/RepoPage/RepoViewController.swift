@@ -21,6 +21,7 @@ class RepoViewController: UITableViewController {
             })
         }
     }
+    
     private var trees = [Tree]() {
         didSet {
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
@@ -30,6 +31,7 @@ class RepoViewController: UITableViewController {
             })
         }
     }
+    
     private var folderURL = [String]()
     private var selectedBranch = "master"
     private var authService: AuthService!
@@ -39,9 +41,11 @@ class RepoViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         authService = AuthService.shared
+        
         refresher = UIRefreshControl()
         refresher.addTarget(self, action: #selector(update), for: .valueChanged)
         tableView.addSubview(refresher)
+        
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "RepoCell")
         setupTreeModel()
         setupBranchModel()
@@ -52,9 +56,7 @@ class RepoViewController: UITableViewController {
     
     @objc func update() {
         setupBranchModel()
-        if folderFlag {
-            
-        } else {
+        if !folderFlag {
             setupTreeModel()
         }
     }
@@ -165,7 +167,8 @@ class RepoViewController: UITableViewController {
                 DispatchQueue.main.async {
                     let vc = WebViewController()
                     vc.data = data
-                    vc.pathExtension = tree.path.pathExtension()
+                    guard let path = tree.path else { return }
+                    vc.pathExtension = path.pathExtension()
                     vc.title = tree.path
                     self.navigationController?.pushViewController(vc, animated: true)
                 }

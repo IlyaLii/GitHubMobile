@@ -153,6 +153,4 @@ extension BaseMainViewController: UITableViewDelegate, UITableViewDataSource, UI
     func adaptivePresentationStyle(for controller: UIPresentationController, traitCollection: UITraitCollection) -> UIModalPresentationStyle {
         return .none
     }
-    
-    
 }

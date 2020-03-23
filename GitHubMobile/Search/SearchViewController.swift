@@ -10,7 +10,7 @@ import UIKit
 
 class SearchViewController: UITableViewController {
     
-    var result: (SearchRepo?, SearchUsers?, SearchCode?)
+    var result: (SearchRepo?, SearchUsers?, SearchCode?, SearchCommits?)
     var type: SearchType! 
     
     private var loadingView = UIView()
@@ -26,7 +26,7 @@ class SearchViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch type {
         case .code: return result.2!.items?.count ?? 0
-        case .commits: return 0
+        case .commits: return result.3!.items?.count ?? 0
         case .repositories: return result.0!.items?.count ?? 0
         case .users: return result.1!.items?.count ?? 0
         case .none: return 0
@@ -35,10 +35,11 @@ class SearchViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
-        cell.textLabel?.text = "sosi"
         switch type {
         case .code: return codeCell(tableView: tableView, indexPath: indexPath)
-        case .commits: break
+        case .commits:
+            cell.textLabel?.text = result.3?.items?[indexPath.row].commit.message
+            return cell
         case .repositories: return repoCell(tableView: tableView, indexPath: indexPath)
         case .users: return userCell(tableView: tableView, indexPath: indexPath)
         case .none: break
@@ -107,6 +108,7 @@ class SearchViewController: UITableViewController {
     
     func userCell(tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileCell", for: indexPath) as! ProfileCell
+        cell.profileImage.image = nil
         guard indexPath.row <= (result.1?.items!.count)!  else { return cell }
         guard let item = result.1?.items?[indexPath.row] else { return cell }
         NetworkManager.downloadImage(url: item.avatar_url) { (result) in
@@ -129,7 +131,6 @@ class SearchViewController: UITableViewController {
         ppc.delegate = self
         ppc.sourceView = sender
         ppc.backgroundColor = .white
-        
         present(vc, animated: true, completion: nil)
     }
     

@@ -13,7 +13,7 @@ import WebKit
 class WebViewController: UIViewController {
     
     private var wkWebView = WKWebView()
-    var data: Data? = nil
+    var data: Data?
     var pathExtension: String?
     override func loadView() {
         view = wkWebView

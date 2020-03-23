@@ -25,7 +25,6 @@ class MainViewController: BaseMainViewController {
     }
     
     override func setupModels() {
-        super.setupModels()
         authService = AuthService.shared
         if userInfo == nil {
             authService.userInfo { (result) in
@@ -87,17 +86,19 @@ extension MainViewController: UISearchControllerDelegate, UISearchResultsUpdatin
         guard let type = searchType else { return }
         if searchBar.text!.count <= 1 { return }
         guard let authService = authService else { return }
-        authService.search(type: type, request: searchBar.text!, login: userInfo.login) { (repo, users, code) in
+        authService.search(type: type, request: searchBar.text!, login: userInfo.login) { (repo, users, code, commit) in
             switch type {
             case .code :
-                resultController.result = (repo, users , code)
+                resultController.result = (repo, users ,code, commit)
                 resultController.type = type
-            case .commits: break
+            case .commits:
+                resultController.result = (repo, users, code, commit)
+                resultController.type = type
             case .repositories:
-                resultController.result = (repo, users , code)
+                resultController.result = (repo, users, code, commit)
                 resultController.type = type
             case .users:
-                resultController.result = (repo, users , code)
+                resultController.result = (repo, users, code, commit)
                 resultController.type = type
             }
             DispatchQueue.main.async {

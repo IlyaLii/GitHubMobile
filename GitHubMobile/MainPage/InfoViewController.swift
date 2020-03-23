@@ -15,11 +15,13 @@ class InfoViewController: UIViewController {
             self.label.text = text
         }
     }
+    
     private var label: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
         return label
     }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white

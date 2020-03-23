@@ -161,7 +161,7 @@ final class AuthService {
         }.resume()
     }
     
-    func search(type: SearchType, request: String, login: String, completionHandler: @escaping(SearchRepo?, SearchUsers?, SearchCode?) -> Void) {
+    func search(type: SearchType, request: String, login: String, completionHandler: @escaping(SearchRepo?, SearchUsers?, SearchCode?, SearchCommits?) -> Void) {
         var url = URL(string: "https://api.github.com")
         if type == .code {
             url = URL(string: "search/\(type.rawValue)?q=\(request)+user:\(login)", relativeTo: url)
@@ -183,14 +183,16 @@ final class AuthService {
                 switch type {
                 case .code:
                     let result = try JSONDecoder().decode(SearchCode.self, from: data)
-                    completionHandler(nil, nil, result)
-                case .commits: break
+                    completionHandler(nil, nil, result, nil)
+                case .commits:
+                    let result = try JSONDecoder().decode(SearchCommits.self, from: data)
+                    completionHandler(nil, nil, nil, result)
                 case .repositories:
                     let result = try JSONDecoder().decode(SearchRepo.self, from: data)
-                    completionHandler(result, nil, nil)
+                    completionHandler(result, nil, nil, nil)
                 case .users:
                     let result = try JSONDecoder().decode(SearchUsers.self, from: data)
-                    completionHandler(nil, result, nil)
+                    completionHandler(nil, result, nil, nil)
                 }
             } catch {
                 print("Search Error, \(error.localizedDescription)")
