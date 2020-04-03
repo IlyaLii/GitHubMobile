@@ -18,36 +18,36 @@ class SearchViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "reuseIdentifier")
+        tableView.register(CommitCell.self, forCellReuseIdentifier: "CommitCell")
         tableView.register(ReposCell.self, forCellReuseIdentifier: "ReposCell")
         tableView.register(ProfileCell.self, forCellReuseIdentifier: "ProfileCell")
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        guard let type = type else { return 0 }
         switch type {
         case .code: return result.2!.items?.count ?? 0
         case .commits: return result.3!.items?.count ?? 0
         case .repositories: return result.0!.items?.count ?? 0
         case .users: return result.1!.items?.count ?? 0
-        case .none: return 0
         }
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
+        guard let type = type else { return UITableViewCell()}
         switch type {
         case .code: return codeCell(tableView: tableView, indexPath: indexPath)
-        case .commits:
-            cell.textLabel?.text = result.3?.items?[indexPath.row].commit.message
-            return cell
+        case .commits: return commitCell(tableView: tableView, indexPath: indexPath)
         case .repositories: return repoCell(tableView: tableView, indexPath: indexPath)
         case .users: return userCell(tableView: tableView, indexPath: indexPath)
-        case .none: break
         }
-        return cell
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+    
+    override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
     }
     
@@ -117,6 +117,16 @@ class SearchViewController: UITableViewController {
             }
         }
         cell.nameLabel.text = item.login
+        return cell
+    }
+    
+    func commitCell(tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CommitCell", for: indexPath) as! CommitCell
+        guard indexPath.row <= (result.3?.items!.count)!  else { return cell }
+        guard let item = result.3?.items?[indexPath.row] else { return cell }
+        cell.messageLabel.text = item.commit.message
+        cell.repoLabel.text = "\(item.commit.tree.path ?? "")/\(item.committer?.login)"
+        cell.infoLabel.text = "fdslmf"
         return cell
     }
     
